@@ -1,0 +1,33 @@
+
+\documentclass[a4paper,12pt]{article}
+%\setlength{\parindent}{0em}
+%\setlength{\parskip}{0em}
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.5}
+
+\begin{document}
+\title{ Lab 1 Submission - Group 10}
+\author{1171733 - Jason Stuart (GL), 669006 - Rashad Akoodie, \\1064934 - Robert Basson /and 886515 - Amine Boukrout}
+\date{August 12, 2017}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Project Description}
+Our core objective is to design, develop and implement a software system which will be used to manage a fleet of taxi-cabs for a company (as per the project brief). Our company, “WitsCABS Company”, will be independently run and will employ our own staff/drivers. Vehicles however may either be owned by WitsCABS Company or by the drivers. The service will run based on “service zones” within the city of operation i.e. the city will be split into various sectors which will allow for more efficient ride time. Each driver will be equipped with a smart-phone embedded with GPS, maps and a navigational tracking system. All vehicles being dispatched will be on instruction from the 24-hour manned Dispatching Control Centre (DCC) which will be in direct contact with clients via calls to the centre.Our core objective is to design, develop and implement a software system which will be used to manage a fleet of taxi-cabs for a company (as per the project brief). Our company, “WitsCABS Company”, will be independently run and will employ our own staff/drivers. Vehicles however may either be owned by WitsCABS Company or by the drivers. The service will run based on “service zones” within the city of operation i.e. the city will be split into various sectors which will allow for more efficient ride time. Each driver will be equipped with a smart-phone embedded with GPS, maps and a navigational tracking system. All vehicles being dispatched will be on instruction from the 24-hour manned Dispatching Control Centre (DCC) which will be in direct contact with clients via calls to the centre.
+\vskip 0.07in
+The front-end of our system will comprise mainly of an android application used by the drivers which will be integrated with a GPS and mapping service such as google maps to optimize routes taken as well as save time in the case of human error. A simple website will be set up as well to deal with customer queries/ complaints and basic information about WitsCABS. To achieve this, we will be primarily using Java as a programming language as well as some HTML and Javascript. The front-end of our mobile android application will consist of the visual representation of the map being used as well as any turning signals or warning, messages etc. needing to be displayed on the screen, a login screen for the drivers where they would enter their credentials, a waiting screen for when they are awaiting a client. Furthermore, the drivers should communicate with the DCC. For this, a web-based application and/or application will need to be created for the DCC where they can view the entire city of operations. The front-end of this “application” would comprise of a form that will allow the DCC to capture customer details. It will then send these details to the backend which will then determine which cab to assign.
+\vskip 0.07in
+The Back-end of our system will make use of Java as well as JSON. This will consist of storing all the driver’s information (Names, license number, car registration, age etc.) as well as each trip he works as well as any necessary information about the passenger transported. It will also be integral to integrate the maps into finding which driver is best suited for the next pickup requested based on some sort of efficiency algorithm which we will design. This information would most probably need to be stored in a database and communicate with our mobile application using JSON. Another useful system to have would be to record every client that has rode with one of our cabs before and perhaps assign a customer number or ID to use the following time he/she requests a ride.
+%\vskip 0.8
+
+\section{Responsibilities of Team}
+Our current student assignment is as follows. Rashad and Amine will handle the mobile app. Robert will handle the frontend. Jason will handle the backend. As the project moves forward, this can change, depending on who needs what help at each time. Each member is responsible for providing constant communication and feedback on their portions as well as suggestions on others work. Jason will schedule any meetings required to advance the project in any way.
+\section{Description of inputs and outputs}
+\subsection{Inputs}
+The first type of input would be a phone call from a customer providing information such as the pickup location, customer name, and contact number. The dispatching control center (DCC) agent will enter the information provided by the customer into a database by using an interface that will run on a localised desktop at the DCC. Once the information is stored on the database, the system will allocate a customer to a driver based on whether or not a driver is available or not (by using an algorithm designed and agreed upon by the developers). The driver will then be provided with the GPS information of the customer which will be inputted into the embedded GPS on the driver's smartphone.
+\pagebreak
+\subsection{Outputs}
+Once the driver has been allocated, a notification will be sent firstly to the driver via the designed app to notify him/her about the customer’s assignment to that particular driver and basic information, such as the customer’s name and contact number, along with the physical address or GPS coordinates that the customer provided (this can be displayed the driver’s app as link which could launch the designed application for the company or the GPS app embedded in the smart phone). On the customer’s side, he/she will receive a SMS when the driver is in a predefined range from the address provided by the customer.
+\end{document}
