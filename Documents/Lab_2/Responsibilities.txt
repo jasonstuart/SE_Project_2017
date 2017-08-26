@@ -1,0 +1,24 @@
+Please refer to the Draft SRS Document labled Submission_2 to view the parts each team was responsible for
+
+The responsibilites are:
+
+4
+4.1
+Credentials
+The Credentials
+• Purpose by Robert, Rashad, and Jason (Section 1.1)
+• Scope by Amine (Section 1.2)
+• Image Process Diagram by Robert
+• Overview by Jason (Section 1.3)
+• Team Management by Jason (Section 2.1.1)
+• Team Meetings by Jason (Section 2.1.2)
+• System Architecture Analysis by Jason (Section 2.2)
+• Analysis of Front-end System (Mobile App) by Rashad (Section 2.3)
+• Analysis of Front-End System (Desktop App) by Robert (Section 2.4)
+• Analysis of Back-End System by Robert (Section 2.5)
+• Additional Software APIs Required by Amine (Section 2.6)
+4.2
+Task and Responsibilities Dedications
+• Front-End Mobile App to be handled by Amine and Rashad (Section 3.1)
+• Front-End Desktop Application to be handled by Robert (Section 3.2)
+• Back-End Server to be handled by Jason (Section 3.3)
