@@ -1,0 +1,183 @@
+%%%%%%%%%%%%  Generated using docx2latex.pythonanywhere.com  %%%%%%%%%%%%%%
+
+
+\documentclass[a4paper,12pt]{report}
+
+% Other options in place of 'report' are 1)article 2)book 3)letter
+% Other options in place of 'a4paper' are 1)a5paper 2)b5paper 3)letterpaper 4)legalpaper 5)executivepaper
+
+
+ %%%%%%%%%%%%  Include Packages  %%%%%%%%%%%%%%
+
+
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{txfonts}
+\usepackage{wasysym}
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage{ragged2e}
+\usepackage{tabularx}
+\usepackage{changepage}
+\usepackage{setspace}
+\usepackage{hhline}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{fancyhdr}
+\usepackage[toc,page]{appendix}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+
+
+ %%%%%%%%%%%%  Define Colors For Hyperlinks  %%%%%%%%%%%%%%
+
+
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,
+urlcolor=cyan,
+}
+\urlstyle{same}
+
+
+ %%%%%%%%%%%%  Set Depths for Sections  %%%%%%%%%%%%%%
+
+% 1) Section
+% 1.1) SubSection
+% 1.1.1) SubSubSection
+% 1.1.1.1) Paragraph
+% 1.1.1.1.1) Subparagraph
+
+
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+
+ %%%%%%%%%%%%  Set Page Margins  %%%%%%%%%%%%%%
+
+
+\usepackage[a4paper,bindingoffset=0.2in,headsep=0.5cm,left=1.0in,right=1.0in,bottom=2cm,top=2cm,headheight=2cm]{geometry}
+\everymath{\displaystyle}
+
+
+ %%%%%%%%%%%%  Set Depths for Nested Lists created by \begin{enumerate}  %%%%%%%%%%%%%%
+
+
+\setlistdepth{9}
+\newlist{myEnumerate}{enumerate}{9}
+	\setlist[myEnumerate,1]{label=\arabic*)}
+	\setlist[myEnumerate,2]{label=\alph*)}
+	\setlist[myEnumerate,3]{label=(\roman*)}
+	\setlist[myEnumerate,4]{label=(\arabic*)}
+	\setlist[myEnumerate,5]{label=(\Alph*)}
+	\setlist[myEnumerate,6]{label=(\Roman*)}
+	\setlist[myEnumerate,7]{label=\arabic*}
+	\setlist[myEnumerate,8]{label=\alph*}
+	\setlist[myEnumerate,9]{label=\roman*}
+
+\renewlist{itemize}{itemize}{9}
+	\setlist[itemize]{label=$\cdot$}
+	\setlist[itemize,1]{label=\textbullet}
+	\setlist[itemize,2]{label=$\circ$}
+	\setlist[itemize,3]{label=$\ast$}
+	\setlist[itemize,4]{label=$\dagger$}
+	\setlist[itemize,5]{label=$\triangleright$}
+	\setlist[itemize,6]{label=$\bigstar$}
+	\setlist[itemize,7]{label=$\blacklozenge$}
+	\setlist[itemize,8]{label=$\prime$}
+
+
+
+ %%%%%%%%%%%%  Header here  %%%%%%%%%%%%%%
+
+
+\pagestyle{fancy}
+\fancyhf{}
+
+
+ %%%%%%%%%%%%  Footer here  %%%%%%%%%%%%%%
+
+
+
+
+ %%%%%%%%%%%%  Print Page Numbers  %%%%%%%%%%%%%%
+
+
+\rfoot{\thepage}
+
+
+ %%%%%%%%%%%%  This sets linespacing (verticle gap between Lines) Default=1 %%%%%%%%%%%%%%
+
+
+\setstretch{1.15}
+
+
+ %%%%%%%%%%%%  Document Code starts here %%%%%%%%%%%%%%
+
+
+\begin{document}
+\sloppy
+\subsection*{1.1 Purpose Robert,Rashad,Jason}
+ \par
+The purpose of this document is to describe what is required for the development of WITSCABS (a lift service similar to the one provided by Uber). This document is meant to convey how we have decided to develop our system and the functionality required for the first release. This will be achieved through a description of the scope of the software being designed, so that the project bounds are clearly defined, in order to prevent scope creep. The document will then for both the front and back ends describe their functional requirements.There will also be a description of the software required to be integrated with our software solution in order for it to be functional according to the requirements.  \par
+In addition to this, a fully descriptive documentation of all programming techniques as well as software engineering techniques that we as a group will follow during development will be included. These techniques will be substantiated in order to provide a clear systematic approach to the complete design of our project. Furthermore, all resources consulted will be included as well. \par
+\noindent 
+
+
+ %%%%%%%%%%%%  Figure/Image No:1 here %%%%%%%%%%%%%%
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=6.27in,height=5.5in]{./uploads_new/Personal_SE.docx_DIR/media/image2.jpg}
+\end{center}
+\end{figure}
+
+
+ %%%%%%%%%%%%  Figure/Image No:1 Ends Here %%%%%%%%%%%%%%
+
+
+\vspace{12pt}
+\noindent 
+\section*{2.4 Analysis of Front-End System (Desktop App) (Robert)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   }
+ \par
+\vspace{12pt}
+\noindent 
+When a user wants to get a lift they have to call in and speak to a call center agent. The call center agent will then get the relevant information from the user and capture it in a desktop application. This application will communicate with a server which will capture the information in a database. The server then sends a notification to the mobile application so that a driver can pick up the user. \par
+\vspace{12pt}
+\noindent 
+We have chosen to use a desktop application over a web application. The main reason for this is responsiveness. Web applications can become unresponsive if the internet connection is heavily used or if there are connectivity issues such as a damaged line, desktop applications have a more reliable response time as response time will be limited by the CPU. Desktop applications are also more secure than web applications which will be important as we store user information on a database. \par
+\vspace{12pt}
+\noindent 
+The language chosen to develop the desktop app is Java. Java is platform independent so it will run no matter what operating system is on the call center computers. Java is an easy to learn object oriented language, this helps us to create reusable code. Another benefit of Java being easy to learn is its popularity, this means that should any problems arise it won't be difficult to find someone to fix these problems. \par
+\vspace{12pt}
+\noindent 
+\section*{2.5 Analysis of Back-End System (Robert) }
+ \par
+\noindent 
+The back-end will consist of two parts. The server application and the database. \par
+\noindent 
+Our database will be developed using the DBMS MySQL. MySQL is a very commonly used and simple DBMS so any issues with the database can be dealt with quickly and easily. As MySQL is very easy it only requires basic statements in order to interact with the database. We have also chosen MySQL as it is free which helps reduce the cost needed to develop the full system. MySQL is also able to handle large amounts of data whi9ch is well suited for a popular application. The DBMS also includes options to add security which can help protect the data in the database from intruders. \par
+\vspace{12pt}
+\noindent 
+The development of the back-end is important even though the user does not interact with it. We need a means to store user information and assign drivers. This back-end actually serves as the lifeline for the system. Hence this will also be developed with Java, since all the members of the team are most familiar with the language and how to implement networking to the highest efficiency possible. \par
+\noindent 
+\section*{3.2 Front-End Desktop Application (Robert)}
+ \par
+\begin{itemize}
+\item Create new passenger\end{itemize}
+ \par
+\begin{itemize}
+\item Insert passenger into database via the server \par
+\item Edit record \par
+\item Push and save information to database\end{itemize}
+ \par
+\vspace{12pt}
+\end{document}
