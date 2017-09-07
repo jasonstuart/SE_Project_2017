@@ -10,8 +10,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -22,29 +20,45 @@ public class WitsCABS_Backend {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args){
+    public static void main(String[] args) throws SQLException{
+        Connection connection = setupDatabaseConnection();
+        test(connection);
+        connection.close();
+    }
+    
+    public static Connection setupDatabaseConnection()
+    {
         String url = "jdbc:mysql://localhost:3306/WitsCABS?useSSL=false";
         String username = "root";
         String password = "jason";
 
         System.out.println("Connecting database...");
+        Connection connection = null;
         try 
         {
-            Connection connection = DriverManager.getConnection(url, username, password);
+            connection = DriverManager.getConnection(url, username, password);
+        } catch (SQLException ex) 
+        {
+            System.out.println("Cannot Connect to database, reason:" + ex);
+        }
+        return connection;
+    }
+    
+    public static void test(Connection connection)
+    {
+        try 
+        {
             Statement s = connection.createStatement();
             ResultSet rs = s.executeQuery("SELECT * FROM Driver;");
             while(rs.next())
             {
                 System.out.println(rs.getString("Last_Name"));
             }
-            
-            connection.close();
         } 
         catch (SQLException ex) 
         {
             System.out.println("Failed to connect to Database. Reason:" + ex);
         }
-        
     }
     
 }
