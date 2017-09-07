@@ -180,6 +180,12 @@ public class CallForm extends javax.swing.JFrame {
         desSuburb = (String)comSuburbDes.getSelectedItem();
         //send info to server
         JOptionPane.showMessageDialog(null, "Request Submitted");
+        txtAdr.setText("");
+        txtAdrDes.setText("");
+        txtDescription.setText("");
+        txtName.setText("");
+        comSuburb.setSelectedIndex(0);
+        comSuburbDes.setSelectedIndex(0);
     }//GEN-LAST:event_btnAssignActionPerformed
 
     private void comSuburbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comSuburbActionPerformed
