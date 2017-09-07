@@ -12,15 +12,24 @@ import javax.swing.JOptionPane;
  *
  * @author Robert
  */
-public class CallForm extends javax.swing.JFrame {
 
+public class CallForm extends javax.swing.JFrame {
+  public class Address{
+      int Num;
+      String Name,Suburb;
+      
+      public Address(int x,String s,String b){
+       this.Num = x;
+       this.Name = s;
+       this.Suburb = b;
+      }
+  }
     /**
      * Creates new form CallForm
      */
     public CallForm() {
         initComponents();
     }
-    public static String name,description,location,destination,locSuburb,desSuburb;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,6 +55,8 @@ public class CallForm extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         txtAdrDes = new javax.swing.JTextField();
+        txtNumLoc = new javax.swing.JTextField();
+        txtNumDes = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,11 +72,6 @@ public class CallForm extends javax.swing.JFrame {
         jLabel1.setText("Users Current Location");
 
         comSuburb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Auckland Park", "Sandton", "Rosebank", "Illovo" }));
-        comSuburb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comSuburbActionPerformed(evt);
-            }
-        });
 
         jLabel2.setText("Place Name/ Address :");
 
@@ -80,11 +86,6 @@ public class CallForm extends javax.swing.JFrame {
         jLabel6.setText("Users Destination");
 
         comSuburbDes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Auckland Park", "Sandton", "Rosebank", "Illovo" }));
-        comSuburbDes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comSuburbDesActionPerformed(evt);
-            }
-        });
 
         jLabel7.setText("Place Name/ Address :");
 
@@ -96,26 +97,36 @@ public class CallForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(comSuburb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAdr, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(comSuburb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtNumLoc, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                                .addComponent(txtAdr, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel1)
                     .addComponent(jLabel6)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(comSuburbDes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAdrDes, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(18, 18, 18)
+                                .addComponent(comSuburbDes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtNumDes, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtAdrDes, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(261, 261, 261)
                         .addComponent(btnAssign))
@@ -127,7 +138,7 @@ public class CallForm extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,10 +154,11 @@ public class CallForm extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtAdr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
+                    .addComponent(txtAdr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNumLoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(comSuburb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -155,12 +167,13 @@ public class CallForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(txtAdrDes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtAdrDes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNumDes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(comSuburbDes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                 .addComponent(btnAssign)
                 .addGap(62, 62, 62))
         );
@@ -172,30 +185,31 @@ public class CallForm extends javax.swing.JFrame {
 
     private void btnAssignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignActionPerformed
         // TODO add your handling code here:
+        String name,description,location,destination,locSuburb,desSuburb;
+        int numLoc,numDes;
         name = txtName.getText();
         description = txtDescription.getText();
         location = txtAdr.getText();
+        numLoc = Integer.parseInt(txtNumLoc.getText());
         locSuburb = (String)comSuburb.getSelectedItem();
+        Address Location = new Address(numLoc, location, locSuburb);        
+        numDes = Integer.parseInt(txtNumDes.getText());
         destination = txtAdrDes.getText();
         desSuburb = (String)comSuburbDes.getSelectedItem();
-        //send info to server
+        Address Destination = new Address(numDes,destination,desSuburb);
+        sendServer(name, description, Location, Destination);
         JOptionPane.showMessageDialog(null, "Request Submitted");
         txtAdr.setText("");
         txtAdrDes.setText("");
         txtDescription.setText("");
         txtName.setText("");
+        txtNumDes.setText("");
+        txtNumLoc.setText("");
         comSuburb.setSelectedIndex(0);
         comSuburbDes.setSelectedIndex(0);
     }//GEN-LAST:event_btnAssignActionPerformed
-
-    private void comSuburbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comSuburbActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comSuburbActionPerformed
-
-    private void comSuburbDesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comSuburbDesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comSuburbDesActionPerformed
-
+    public static void sendServer(String Name,String Desc,Address location,Address Destination){
+    }
     /**
      * @param args the command line arguments
      */
@@ -247,5 +261,7 @@ public class CallForm extends javax.swing.JFrame {
     private javax.swing.JTextField txtAdrDes;
     private javax.swing.JTextField txtDescription;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtNumDes;
+    private javax.swing.JTextField txtNumLoc;
     // End of variables declaration//GEN-END:variables
 }
