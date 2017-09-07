@@ -1,5 +1,12 @@
 package callcenter;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /*
@@ -197,7 +204,11 @@ public class CallForm extends javax.swing.JFrame {
         destination = txtAdrDes.getText();
         desSuburb = (String)comSuburbDes.getSelectedItem();
         Address Destination = new Address(numDes,destination,desSuburb);
-        sendServer(name, description, Location, Destination);
+      try {
+          sendServer(name, description, Location, Destination);
+      } catch (IOException ex) {
+          Logger.getLogger(CallForm.class.getName()).log(Level.SEVERE, null, ex);
+      }
         JOptionPane.showMessageDialog(null, "Request Submitted");
         txtAdr.setText("");
         txtAdrDes.setText("");
@@ -208,7 +219,22 @@ public class CallForm extends javax.swing.JFrame {
         comSuburb.setSelectedIndex(0);
         comSuburbDes.setSelectedIndex(0);
     }//GEN-LAST:event_btnAssignActionPerformed
-    public static void sendServer(String Name,String Desc,Address location,Address Destination){
+    public static void sendServer(String Name,String Desc,Address location,Address Destination) throws IOException{
+       /* Socket client = new Socket();//ip,port);
+        DataOutputStream out = new DataOutputStream(client.getOutputStream());
+        BufferedReader read = new BufferedReader(new InputStreamReader(client.getInputStream()));*/
+        String s= "{\"name\":\""+Name+"\""+",";
+        s = s+ "\"description\":\""+Desc+"\""+",";
+        s = s+ "\"locnum\":"+location.Num+",";
+        s = s+ "\"locstreet\":\""+location.Name+"\""+",";
+        s = s+ "\"locsuburb\":\""+location.Suburb+"\""+",";
+        s = s+ "\"desnum\":"+Destination.Num+",";
+        s = s+ "\"desstreet\":\""+Destination.Name+"\""+",";
+        s = s+ "\"dessuburb\":\""+Destination.Suburb+"\""+"}";
+        /*out.writeBytes(s);
+        String Response = read.readLine();
+        System.out.println(Response);
+        client.close();*/
     }
     /**
      * @param args the command line arguments
