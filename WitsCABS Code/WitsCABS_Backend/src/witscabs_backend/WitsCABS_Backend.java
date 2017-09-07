@@ -5,6 +5,8 @@
  */
 package witscabs_backend;
 
+import java.io.IOException;
+import java.net.ServerSocket;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -20,9 +22,15 @@ public class WitsCABS_Backend {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws SQLException{
-        Connection connection = setupDatabaseConnection();
-        test(connection);
+    public static void main(String[] args) throws SQLException, IOException{
+        Connection connection = setupDatabaseConnection(); //setup database connection
+        ServerSocket s = new Server().startServer(9987); //start server to listen for connections
+        boolean run = true;
+        while(run)
+        {
+            Client client = new Client(s.accept());
+        }
+        //test(connection);
         connection.close();
     }
     

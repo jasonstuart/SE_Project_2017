@@ -5,10 +5,33 @@
  */
 package witscabs_backend;
 
+import java.io.IOException;
+import java.net.ServerSocket;
+
 /**
  *
  * @author Jason
  */
-public class Server {
+public class Server
+{
+    private ServerSocket s;
     
+    public Server()
+    {
+        
+    }
+    
+    public ServerSocket startServer(int portNum)
+    {
+        try 
+        {
+            s = new ServerSocket(portNum);
+            return s;
+        } 
+        catch (IOException ex) 
+        {
+            System.out.println("Could Not Start Server On Port: " + portNum);
+            return null;
+        }
+    }
 }
