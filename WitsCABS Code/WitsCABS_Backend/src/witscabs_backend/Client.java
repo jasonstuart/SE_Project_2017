@@ -35,18 +35,20 @@ public class Client extends Thread
             String function = in.readLine();
             if(function.equalsIgnoreCase("newCustomer"))
             {
-                out.writeBytes("OK");
+                out.writeBytes("OK\n");
                 String JSON = in.readLine();
-                out.writeBytes("OK");
+                System.out.println(JSON);
+                out.writeBytes("OK\n");
             }
             else
             {
-                out.writeBytes("NOT UNDERSTOOD");
+                out.writeBytes("NOT UNDERSTOOD\n");
             }
             
             in.close();
             out.close();
             c.close();
+            System.out.println("Client Closed!");
         } 
         catch (IOException ex) 
         {

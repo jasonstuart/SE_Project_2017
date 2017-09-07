@@ -204,44 +204,64 @@ public class CallForm extends javax.swing.JFrame {
         destination = txtAdrDes.getText();
         desSuburb = (String)comSuburbDes.getSelectedItem();
         Address Destination = new Address(numDes,destination,desSuburb);
-      try {
-          sendServer(name, description, Location, Destination);
-      } catch (IOException ex) {
-          Logger.getLogger(CallForm.class.getName()).log(Level.SEVERE, null, ex);
-      }
-        JOptionPane.showMessageDialog(null, "Request Submitted");
-        txtAdr.setText("");
-        txtAdrDes.setText("");
-        txtDescription.setText("");
-        txtName.setText("");
-        txtNumDes.setText("");
-        txtNumLoc.setText("");
-        comSuburb.setSelectedIndex(0);
-        comSuburbDes.setSelectedIndex(0);
+        boolean success = false;
+        try {
+            success = sendServer(name, description, Location, Destination);
+        } catch (IOException ex) {
+            Logger.getLogger(CallForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        if(success)
+        {
+            JOptionPane.showMessageDialog(null, "Request Submitted");
+            txtAdr.setText("");
+            txtAdrDes.setText("");
+            txtDescription.setText("");
+            txtName.setText("");
+            txtNumDes.setText("");
+            txtNumLoc.setText("");
+            comSuburb.setSelectedIndex(0);
+            comSuburbDes.setSelectedIndex(0);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "An error occured, try again please");
+        }
     }//GEN-LAST:event_btnAssignActionPerformed
-    public static void sendServer(String Name,String Desc,Address location,Address Destination) throws IOException{
-       Socket client = new Socket();//ip,port);
-        DataOutputStream out = new DataOutputStream(client.getOutputStream());
-        BufferedReader read = new BufferedReader(new InputStreamReader(client.getInputStream()));
-       out.writeBytes("newCustomer");
-       String resp = read.readLine();
-       if(resp.equals("OK")){
-        String s= "{\"name\":\""+Name+"\""+",";
-        s = s+ "\"description\":\""+Desc+"\""+",";
-        s = s+ "\"locnum\":"+location.Num+",";
-        s = s+ "\"locstreet\":\""+location.Name+"\""+",";
-        s = s+ "\"locsuburb\":\""+location.Suburb+"\""+",";
-        s = s+ "\"desnum\":"+Destination.Num+",";
-        s = s+ "\"desstreet\":\""+Destination.Name+"\""+",";
-        s = s+ "\"dessuburb\":\""+Destination.Suburb+"\""+"}";
-        out.writeBytes(s);
-        String Response = read.readLine();
-        System.out.println(Response);
-        if(Response.equals("OK")){
-         client.close();
+    public static boolean sendServer(String Name,String Desc,Address location,Address Destination) throws IOException
+    {
+        try 
+        {
+            Socket client = new Socket("ip needed", 9987);
+            DataOutputStream out = new DataOutputStream(client.getOutputStream());
+            BufferedReader read = new BufferedReader(new InputStreamReader(client.getInputStream()));
+            out.writeBytes("newCustomer\n");
+            String resp = read.readLine();
+            if(resp.equals("OK"))
+            {
+                String s= "{\"name\":\""+Name+"\""+",";
+                s = s+ "\"description\":\""+Desc+"\""+",";
+                s = s+ "\"locnum\":"+location.Num+",";
+                s = s+ "\"locstreet\":\""+location.Name+"\""+",";
+                s = s+ "\"locsuburb\":\""+location.Suburb+"\""+",";
+                s = s+ "\"desnum\":"+Destination.Num+",";
+                s = s+ "\"desstreet\":\""+Destination.Name+"\""+",";
+                s = s+ "\"dessuburb\":\""+Destination.Suburb+"\""+"}\n";
+                out.writeBytes(s);
+                String Response = read.readLine();
+                System.out.println(Response);
+                out.close();
+                read.close();
+                client.close();
+                return true;
+            }
+        } 
+        catch (IOException ex) 
+        {
+            System.out.println("Cannot connect to Server!");
+            return false;
         }
-        }
-        client.close();
+        return false;
     }
     /**
      * @param args the command line arguments

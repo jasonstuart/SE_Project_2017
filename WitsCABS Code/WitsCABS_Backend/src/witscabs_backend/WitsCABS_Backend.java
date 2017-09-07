@@ -21,6 +21,8 @@ public class WitsCABS_Backend {
 
     /**
      * @param args the command line arguments
+     * @throws java.sql.SQLException
+     * @throws java.io.IOException
      */
     public static void main(String[] args) throws SQLException, IOException{
         Connection connection = setupDatabaseConnection(); //setup database connection
@@ -29,6 +31,8 @@ public class WitsCABS_Backend {
         while(run)
         {
             Client client = new Client(s.accept());
+            System.out.println("Incoming Connection!");
+            client.start();
         }
         //test(connection);
         connection.close();
@@ -49,6 +53,7 @@ public class WitsCABS_Backend {
         {
             System.out.println("Cannot Connect to database, reason:" + ex);
         }
+        System.out.println("Database Connected");
         return connection;
     }
     

@@ -23,9 +23,11 @@ public class Server
     
     public ServerSocket startServer(int portNum)
     {
+        System.out.println("Starting Server Socket...");
         try 
         {
             s = new ServerSocket(portNum);
+            System.out.println("Socket Listening for connections...");
             return s;
         } 
         catch (IOException ex) 
