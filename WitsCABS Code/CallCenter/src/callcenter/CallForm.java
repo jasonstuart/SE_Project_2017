@@ -220,9 +220,12 @@ public class CallForm extends javax.swing.JFrame {
         comSuburbDes.setSelectedIndex(0);
     }//GEN-LAST:event_btnAssignActionPerformed
     public static void sendServer(String Name,String Desc,Address location,Address Destination) throws IOException{
-       /* Socket client = new Socket();//ip,port);
+       Socket client = new Socket();//ip,port);
         DataOutputStream out = new DataOutputStream(client.getOutputStream());
-        BufferedReader read = new BufferedReader(new InputStreamReader(client.getInputStream()));*/
+        BufferedReader read = new BufferedReader(new InputStreamReader(client.getInputStream()));
+       out.writeBytes("newCustomer");
+       String resp = read.readLine();
+       if(resp.equals("OK")){
         String s= "{\"name\":\""+Name+"\""+",";
         s = s+ "\"description\":\""+Desc+"\""+",";
         s = s+ "\"locnum\":"+location.Num+",";
@@ -231,10 +234,14 @@ public class CallForm extends javax.swing.JFrame {
         s = s+ "\"desnum\":"+Destination.Num+",";
         s = s+ "\"desstreet\":\""+Destination.Name+"\""+",";
         s = s+ "\"dessuburb\":\""+Destination.Suburb+"\""+"}";
-        /*out.writeBytes(s);
+        out.writeBytes(s);
         String Response = read.readLine();
         System.out.println(Response);
-        client.close();*/
+        if(Response.equals("OK")){
+         client.close();
+        }
+        }
+        client.close();
     }
     /**
      * @param args the command line arguments
