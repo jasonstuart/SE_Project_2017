@@ -37,6 +37,18 @@ public class Client extends Thread
             {
                 out.writeBytes("OK\n");
                 String JSON = in.readLine();
+                JSON_Handler temp = new JSON_Handler(JSON);
+                String sql = "INSERT INTO CUSTOMER(Customer_Name, Customer_Description, Customer_PhoneNumber, Customer_StartNumber,"
+                        + "Customer_StartStreet, Customer_StartSuburb, Customer_EndNumber, Customer_EndStreet, Customer_EndSuburb)"
+                        + "VALUES("+temp.getWholeValue()+");";
+                System.out.println(sql);
+                WitsCABS_Backend.sendSQLQuery(sql);
+                out.writeBytes("OK\n");
+            }
+            else if(function.equalsIgnoreCase("newDriver"))
+            {
+                out.writeBytes("OK\n");
+                String JSON = in.readLine();
                 System.out.println(JSON);
                 out.writeBytes("OK\n");
             }
@@ -55,4 +67,5 @@ public class Client extends Thread
             Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
 }

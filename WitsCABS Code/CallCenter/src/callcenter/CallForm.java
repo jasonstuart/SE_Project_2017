@@ -239,6 +239,7 @@ public class CallForm extends javax.swing.JFrame {
             txtNumLoc.setText("");
             comSuburb.setSelectedIndex(0);
             comSuburbDes.setSelectedIndex(0);
+            txtPhoneNumber.setText("");
         }
         else
         {
@@ -249,7 +250,7 @@ public class CallForm extends javax.swing.JFrame {
     {
         try 
         {
-            Socket client = new Socket("ip needed", 9987);
+            Socket client = new Socket("192.168.0.9", 9987);
             DataOutputStream out = new DataOutputStream(client.getOutputStream());
             BufferedReader read = new BufferedReader(new InputStreamReader(client.getInputStream()));
             out.writeBytes("newCustomer\n");
@@ -266,6 +267,7 @@ public class CallForm extends javax.swing.JFrame {
                 s = s+ "\"desstreet\":\""+Destination.Name+"\""+",";
                 s = s+ "\"dessuburb\":\""+Destination.Suburb+"\""+"}\n";
                 out.writeBytes(s);
+                System.out.println(s);
                 String Response = read.readLine();
                 System.out.println(Response);
                 out.close();

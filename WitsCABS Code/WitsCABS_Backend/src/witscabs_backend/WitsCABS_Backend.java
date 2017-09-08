@@ -19,13 +19,14 @@ import java.sql.Statement;
  */
 public class WitsCABS_Backend {
 
+    private static Connection connection;
     /**
      * @param args the command line arguments
      * @throws java.sql.SQLException
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws SQLException, IOException{
-        Connection connection = setupDatabaseConnection(); //setup database connection
+        connection = setupDatabaseConnection(); //setup database connection
         ServerSocket s = new Server().startServer(9987); //start server to listen for connections
         boolean run = true;
         while(run)
@@ -45,7 +46,6 @@ public class WitsCABS_Backend {
         String password = "jason";
 
         System.out.println("Connecting database...");
-        Connection connection = null;
         try 
         {
             connection = DriverManager.getConnection(url, username, password);
@@ -57,15 +57,20 @@ public class WitsCABS_Backend {
         return connection;
     }
     
-    public static void test(Connection connection)
+    public static void sendSQLQuery(String sql)
     {
         try 
         {
             Statement s = connection.createStatement();
-            ResultSet rs = s.executeQuery("SELECT * FROM Driver;");
-            while(rs.next())
+            if(sql.contains("SELECT"))
             {
-                System.out.println(rs.getString("Last_Name"));
+                ResultSet rs = s.executeQuery(sql);
+                System.out.println(rs);
+            }
+            else
+            {
+                int r = s.executeUpdate(sql);
+                System.out.println(r);
             }
         } 
         catch (SQLException ex) 
