@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.6)  7 SEP 2017 19:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.6)  8 SEP 2017 09:58
 entering extended mode
 **./SRS.tex
 (SRS.tex
@@ -282,15 +282,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--63
 
  []
 
-[11] [12] [13] [14]
+[11] [12] [13] [14] [15]
 Missing character: There is no Â in font cmr12!
 Missing character: There is no ’ in font cmr12!
- [15] (SRS.aux) ) 
+ [16] (SRS.aux) ) 
 Here is how much of TeX's memory you used:
- 1501 strings out of 493323
- 22107 string characters out of 3130016
+ 1502 strings out of 493323
+ 22125 string characters out of 3130016
  85861 words of memory out of 3000000
- 5046 multiletter control sequences out of 15000+200000
+ 5047 multiletter control sequences out of 15000+200000
  8808 words of font info for 31 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,6n,25p,1508b,201s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -298,9 +298,9 @@ Here is how much of TeX's memory you used:
 public/amsfonts/cm/cmbx12.pfb><C:/Users/Jason/AppData/Local/Programs/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Jason/AppData/Local/Program
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on SRS.pdf (15 pages, 119937 bytes).
+Output written on SRS.pdf (16 pages, 122032 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
+ 67 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
