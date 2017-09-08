@@ -64,6 +64,8 @@ public class CallForm extends javax.swing.JFrame {
         txtAdrDes = new javax.swing.JTextField();
         txtNumLoc = new javax.swing.JTextField();
         txtNumDes = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        txtPhoneNumber = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,6 +99,10 @@ public class CallForm extends javax.swing.JFrame {
         jLabel7.setText("Place Name/ Address :");
 
         jLabel8.setText("Suburb:");
+
+        jLabel9.setText("PhoneNumber:");
+
+        txtPhoneNumber.setName("txtPhoneNumber"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,14 +143,20 @@ public class CallForm extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(261, 261, 261)
                         .addComponent(btnAssign))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5))
-                        .addGap(89, 89, 89)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel9)
+                            .addGap(89, 89, 89)
+                            .addComponent(txtPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(385, 385, 385))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel5))
+                            .addGap(89, 89, 89)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -158,7 +170,11 @@ public class CallForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(txtPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -180,7 +196,7 @@ public class CallForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(comSuburbDes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addGap(44, 44, 44)
                 .addComponent(btnAssign)
                 .addGap(62, 62, 62))
         );
@@ -192,7 +208,7 @@ public class CallForm extends javax.swing.JFrame {
 
     private void btnAssignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignActionPerformed
         // TODO add your handling code here:
-        String name,description,location,destination,locSuburb,desSuburb;
+        String name,description,phoneNumber,location,destination,locSuburb,desSuburb;
         int numLoc,numDes;
         name = txtName.getText();
         description = txtDescription.getText();
@@ -203,10 +219,11 @@ public class CallForm extends javax.swing.JFrame {
         numDes = Integer.parseInt(txtNumDes.getText());
         destination = txtAdrDes.getText();
         desSuburb = (String)comSuburbDes.getSelectedItem();
+        phoneNumber = txtPhoneNumber.getText();
         Address Destination = new Address(numDes,destination,desSuburb);
         boolean success = false;
         try {
-            success = sendServer(name, description, Location, Destination);
+            success = sendServer(name, description, phoneNumber, Location, Destination);
         } catch (IOException ex) {
             Logger.getLogger(CallForm.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -228,7 +245,7 @@ public class CallForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "An error occured, try again please");
         }
     }//GEN-LAST:event_btnAssignActionPerformed
-    public static boolean sendServer(String Name,String Desc,Address location,Address Destination) throws IOException
+    public static boolean sendServer(String Name,String Desc, String phoneNumber, Address location, Address Destination) throws IOException
     {
         try 
         {
@@ -241,6 +258,7 @@ public class CallForm extends javax.swing.JFrame {
             {
                 String s= "{\"name\":\""+Name+"\""+",";
                 s = s+ "\"description\":\""+Desc+"\""+",";
+                s = s+ "\"phonenumber\":\""+phoneNumber+"\""+",";
                 s = s+ "\"locnum\":"+location.Num+",";
                 s = s+ "\"locstreet\":\""+location.Name+"\""+",";
                 s = s+ "\"locsuburb\":\""+location.Suburb+"\""+",";
@@ -310,11 +328,13 @@ public class CallForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField txtAdr;
     private javax.swing.JTextField txtAdrDes;
     private javax.swing.JTextField txtDescription;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtNumDes;
     private javax.swing.JTextField txtNumLoc;
+    private javax.swing.JTextField txtPhoneNumber;
     // End of variables declaration//GEN-END:variables
 }
