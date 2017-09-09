@@ -23,6 +23,7 @@ DROP TABLE IF EXISTS `customer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `customer` (
+  `Customer_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Customer_Name` varchar(255) DEFAULT NULL,
   `Customer_Description` varchar(255) DEFAULT NULL,
   `Customer_PhoneNumber` varchar(10) DEFAULT NULL,
@@ -32,10 +33,9 @@ CREATE TABLE `customer` (
   `Customer_EndNumber` int(11) DEFAULT NULL,
   `Customer_EndStreet` varchar(255) DEFAULT NULL,
   `Customer_EndSuburb` varchar(255) DEFAULT NULL,
-  `Customer_ID` int(11) NOT NULL,
   PRIMARY KEY (`Customer_ID`),
   UNIQUE KEY `Customer_ID` (`Customer_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,6 +44,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` VALUES (1,'Jack','Tall Male, with bright blue shirt','0213459678',21,'Long Street','Auckland Park',1,'Jackson Street','Sandton');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,8 +58,9 @@ DROP TABLE IF EXISTS `drive`;
 CREATE TABLE `drive` (
   `Driver_ID` int(11) NOT NULL,
   `Customer_ID` int(11) NOT NULL,
-  UNIQUE KEY `Driver_ID` (`Driver_ID`),
-  UNIQUE KEY `Customer_ID` (`Customer_ID`),
+  `Drive_Status` varchar(50) DEFAULT 'Assigned',
+  KEY `Driver_ID` (`Driver_ID`),
+  KEY `Customer_ID` (`Customer_ID`),
   CONSTRAINT `drive_ibfk_1` FOREIGN KEY (`Driver_ID`) REFERENCES `driver` (`Driver_ID`),
   CONSTRAINT `drive_ibfk_2` FOREIGN KEY (`Customer_ID`) REFERENCES `customer` (`Customer_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -81,6 +83,7 @@ DROP TABLE IF EXISTS `driver`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `driver` (
+  `Driver_ID` int(11) NOT NULL AUTO_INCREMENT,
   `First_Name` varchar(255) DEFAULT NULL,
   `Last_Name` varchar(255) DEFAULT NULL,
   `Phone_Number` varchar(10) DEFAULT NULL,
@@ -90,10 +93,10 @@ CREATE TABLE `driver` (
   `Home_Number` int(11) DEFAULT NULL,
   `Home_StreetName` varchar(255) DEFAULT NULL,
   `Home_Area` varchar(255) DEFAULT NULL,
-  `Driver_ID` int(11) NOT NULL,
+  `Driver_Status` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Driver_ID`),
   UNIQUE KEY `Driver_ID` (`Driver_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -102,7 +105,7 @@ CREATE TABLE `driver` (
 
 LOCK TABLES `driver` WRITE;
 /*!40000 ALTER TABLE `driver` DISABLE KEYS */;
-INSERT INTO `driver` VALUES ('Jason','Stuart','0923485693','KJ23WEGP','Honda Civic','Silver',11,'Truro Road','Alberton',0);
+INSERT INTO `driver` VALUES (1,'Jason','Stuart','0923485693','KJ23WEGP','Honda Civic','Silver',11,'Truro Road','Alberton',0);
 /*!40000 ALTER TABLE `driver` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -115,4 +118,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-08 10:42:39
+-- Dump completed on 2017-09-09 16:31:02
