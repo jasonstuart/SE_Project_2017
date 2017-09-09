@@ -57,7 +57,7 @@ public class WitsCABS_Backend {
         return connection;
     }
     
-    public static void sendSQLQuery(String sql)
+    public static ResultSet sendSQLQuery(String sql)
     {
         try 
         {
@@ -66,17 +66,20 @@ public class WitsCABS_Backend {
             {
                 ResultSet rs = s.executeQuery(sql);
                 System.out.println(rs);
+                return rs;
             }
             else
             {
                 int r = s.executeUpdate(sql);
                 System.out.println(r);
+                return null;
             }
         } 
         catch (SQLException ex) 
         {
             System.out.println("Failed to connect to Database. Reason:" + ex);
         }
+        return null;
     }
     
 }
