@@ -46,6 +46,12 @@ public class Client extends Thread
                 System.out.println(sql);
                 WitsCABS_Backend.sendSQLQuery(sql);
                 out.writeBytes("OK\n");
+                
+                String rec = "SELECT Driver_ID, Home_Number, Home_StreetName, Home_Area FROM Driver, TaxiRank WHERE (Driver_Status = 1 "
+                        + "AND Home_Area =" + temp.getValueFromVar("startsuburb")+") OR (Driver.Rank_ID = TaxiRank.Rank_ID AND TaxiRank.Rank_Suburb="
+                        + temp.getValueFromVar("startsuburb") + ");";
+                System.out.println(rec);
+                ResultSet drivers = WitsCABS_Backend.sendSQLQuery(sql);
                 //TODO add code to assign customer to available driver using routing algorithm
             }
             else if(function.equalsIgnoreCase("newDriver"))
@@ -82,7 +88,7 @@ public class Client extends Thread
                             + "{\"endstreet\":\""+returned.getString("Customer_EndStreet")+"\","
                             + "{\"endsuburb\":\""+returned.getString("Customer_EndSuburb")+"\"}";
                     
-                    //TODO Implement sending JSON FILE TO Smartphone
+                    out.writeBytes(temp + "\n");
                 }
                 else
                 {

@@ -94,8 +94,11 @@ CREATE TABLE `driver` (
   `Home_StreetName` varchar(255) DEFAULT NULL,
   `Home_Area` varchar(255) DEFAULT NULL,
   `Driver_Status` tinyint(1) DEFAULT '0',
+  `Rank_ID` int(11) DEFAULT NULL,
   PRIMARY KEY (`Driver_ID`),
-  UNIQUE KEY `Driver_ID` (`Driver_ID`)
+  UNIQUE KEY `Driver_ID` (`Driver_ID`),
+  KEY `Rank_ID` (`Rank_ID`),
+  CONSTRAINT `driver_ibfk_1` FOREIGN KEY (`Rank_ID`) REFERENCES `taxirank` (`Rank_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -105,8 +108,33 @@ CREATE TABLE `driver` (
 
 LOCK TABLES `driver` WRITE;
 /*!40000 ALTER TABLE `driver` DISABLE KEYS */;
-INSERT INTO `driver` VALUES (1,'Jason','Stuart','0923485693','KJ23WEGP','Honda Civic','Silver',11,'Truro Road','Alberton',0);
+INSERT INTO `driver` VALUES (1,'Jason','Stuart','0923485693','KJ23WEGP','Honda Civic','Silver',11,'Truro Road','Alberton',0,NULL);
 /*!40000 ALTER TABLE `driver` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `taxirank`
+--
+
+DROP TABLE IF EXISTS `taxirank`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `taxirank` (
+  `Rank_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Rank_Number` int(11) DEFAULT NULL,
+  `Rank_StreetName` varchar(255) DEFAULT NULL,
+  `Rank_StreetSuburb` varchar(255) DEFAULT NULL,
+  UNIQUE KEY `Rank_ID` (`Rank_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `taxirank`
+--
+
+LOCK TABLES `taxirank` WRITE;
+/*!40000 ALTER TABLE `taxirank` DISABLE KEYS */;
+/*!40000 ALTER TABLE `taxirank` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -118,4 +146,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-09 16:31:02
+-- Dump completed on 2017-09-11 12:44:08
