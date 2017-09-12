@@ -260,9 +260,9 @@ public class CallForm extends javax.swing.JFrame {
                 String s= "{\"name\":\""+Name+"\""+",";
                 s = s+ "\"description\":\""+Desc+"\""+",";
                 s = s+ "\"phonenumber\":\""+phoneNumber+"\""+",";
-                s = s+ "\"locnum\":"+location.Num+",";
-                s = s+ "\"locstreet\":\""+location.Name+"\""+",";
-                s = s+ "\"locsuburb\":\""+location.Suburb+"\""+",";
+                s = s+ "\"startnum\":"+location.Num+",";
+                s = s+ "\"startstreet\":\""+location.Name+"\""+",";
+                s = s+ "\"startsuburb\":\""+location.Suburb+"\""+",";
                 s = s+ "\"desnum\":"+Destination.Num+",";
                 s = s+ "\"desstreet\":\""+Destination.Name+"\""+",";
                 s = s+ "\"dessuburb\":\""+Destination.Suburb+"\""+"}\n";
