@@ -139,7 +139,7 @@ public class Client extends Thread
                 
                 String[] username = temp.getValueFromVar("username").split("_");
                 
-                String sql = "UPDATE Driver SET Driver_Status = " + value + "WHERE First_Name = " + username[0] + " AND Last_Name = " + username[1] +";";
+                String sql = "UPDATE Driver SET Driver_Status = " + value+ ", Driver_StatusTime = Now() WHERE First_Name = " + username[0] + " AND Last_Name = " + username[1] +";";
                 System.out.println(sql);
                 WitsCABS_Backend.sendSQLQuery(sql);
             }
