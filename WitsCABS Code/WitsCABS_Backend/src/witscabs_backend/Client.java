@@ -66,7 +66,7 @@ public class Client extends Thread
                 String JSON = in.readLine();
                 JSON_Handler temp = new JSON_Handler(JSON);
                 String sql = "INSERT INTO Driver(First_Name, Last_Name,Phone_Number, Car_Registration, Car_Make, Car_Colour,"
-                        + "Home_Number, Home_StreetName, Home_Area)"
+                        + "Home_Number, Home_StreetName, Home_Area, Driver_Password)"
                         + "VALUES("+temp.getWholeValue()+");";
                 System.out.println(sql);
                 WitsCABS_Backend.sendSQLQuery(sql);
@@ -76,10 +76,12 @@ public class Client extends Thread
             {
                 //TODO Test this functionality for bugs
                 out.writeBytes("OK\n");
-                String driver_id = in.readLine();
+                String[] username = in.readLine().split("_");
+                
                 String sql = "SELECT Customer_ID, Customer_Name, Customer_Description, Customer_PhoneNumber, Customer_StartNumber, Customer_StartStreet,"
                         + "Customer_StartSuburb, Customer_EndNumber, Customer_EndStreet, Customer_EndSuburb FROM Customer, Drive"
-                        + " WHERE Drive.Driver_ID = " + driver_id + "AND Drive.Drive_Status = \"Assigned\"";
+                        + " WHERE Drive.Driver_ID = Driver.Driver_ID AND Driver.First_Name = " + username[0] + " AND Driver.Last_Name"
+                        + "= " + username[1] + "AND Drive.Drive_Status = \"Assigned\"";
                 System.out.println(sql);
                 ResultSet returned = WitsCABS_Backend.sendSQLQuery(sql);
                 if(returned.getFetchSize() != 0)
@@ -96,7 +98,7 @@ public class Client extends Thread
                     
                     out.writeBytes(temp + "\n");
                     
-                    String update = "UPDATE Drive SET Drive_Status = InProgress WHERE Customer_ID = " + returned.getInt("Customer_ID") + ";";
+                    String update = "UPDATE Drive SET Drive_Status = \"InProgress\" WHERE Customer_ID = " + returned.getInt("Customer_ID") + ";";
                     System.out.println(update);
                     WitsCABS_Backend.sendSQLQuery(update);
                 }

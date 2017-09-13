@@ -94,6 +94,8 @@ CREATE TABLE `driver` (
   `Home_StreetName` varchar(255) DEFAULT NULL,
   `Home_Area` varchar(255) DEFAULT NULL,
   `Driver_Status` tinyint(1) DEFAULT '0',
+  `Driver_Password` varchar(100) DEFAULT NULL,
+  `Driver_StatusTime` datetime DEFAULT NULL,
   PRIMARY KEY (`Driver_ID`),
   UNIQUE KEY `Driver_ID` (`Driver_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
@@ -105,7 +107,7 @@ CREATE TABLE `driver` (
 
 LOCK TABLES `driver` WRITE;
 /*!40000 ALTER TABLE `driver` DISABLE KEYS */;
-INSERT INTO `driver` VALUES (1,'Jason','Stuart','0923485693','KJ23WEGP','Honda Civic','Silver',11,'Truro Road','Alberton',0);
+INSERT INTO `driver` VALUES (1,'Jason','Stuart','0923485693','KJ23WEGP','Honda Civic','Silver',11,'Truro Road','Alberton',0,NULL,NULL);
 /*!40000 ALTER TABLE `driver` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -118,4 +120,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-12 11:32:56
+-- Dump completed on 2017-09-13 10:14:42
