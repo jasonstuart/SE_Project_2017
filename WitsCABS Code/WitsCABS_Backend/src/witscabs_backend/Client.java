@@ -50,9 +50,8 @@ public class Client extends Thread
                 WitsCABS_Backend.sendSQLQuery(sql);
                 out.writeBytes("OK\n");
                 
-                String rec = "SELECT Driver_ID, Home_Number, Home_StreetName, Home_Area, Rank_ID FROM Driver, TaxiRank WHERE (Driver_Status = 1 "
-                        + "AND Home_Area =" + temp.getValueFromVar("startsuburb")+") OR (Driver.Rank_ID = TaxiRank.Rank_ID AND TaxiRank.Rank_Suburb="
-                        + temp.getValueFromVar("startsuburb") + ");";
+                String rec = "SELECT Driver_ID, Home_Number, Home_StreetName, Home_Area, Rank_ID FROM Driver WHERE (Driver_Status = 1 "
+                        + "AND Home_Area =" + temp.getValueFromVar("startsuburb")+") ORDER BY Driver_StatusTime;";
                 System.out.println(rec);
                 ResultSet drivers = WitsCABS_Backend.sendSQLQuery(sql);
                 
@@ -126,6 +125,23 @@ public class Client extends Thread
                 {
                     out.writeBytes("FAIL");
                 }
+            }
+            else if(function.equalsIgnoreCase("status"))
+            {
+                String input = in.readLine();
+                JSON_Handler temp = new JSON_Handler(input);
+                
+                int value = 0;
+                if(temp.getValueFromVar("status").equalsIgnoreCase("true"))
+                {
+                    value = 1;
+                }
+                
+                String[] username = temp.getValueFromVar("username").split("_");
+                
+                String sql = "UPDATE Driver SET Driver_Status = " + value + "WHERE First_Name = " + username[0] + " AND Last_Name = " + username[1] +";";
+                System.out.println(sql);
+                WitsCABS_Backend.sendSQLQuery(sql);
             }
             else
             {
