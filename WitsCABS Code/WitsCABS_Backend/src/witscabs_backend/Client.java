@@ -8,8 +8,11 @@ package witscabs_backend;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.net.Socket;
+import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -142,7 +145,7 @@ public class Client extends Thread
         }
     }
     
-    public static int assignDriver(ResultSet r, String num, String street, String suburb) throws SQLException
+    public static int assignDriver(ResultSet r, String num, String street, String suburb) throws SQLException, IOException
     {
         int bestDriver = 0;
         double bestDistance = Double.MAX_VALUE;
@@ -161,10 +164,30 @@ public class Client extends Thread
         return bestDriver;
     }
     
-    public static double getDistance(String dNum, String dStreet, String dSuburb, String cNum, String cStreet, String cSuburb)
+    public static double getDistance(String dNum, String dStreet, String dSuburb, String cNum, String cStreet, String cSuburb) throws MalformedURLException, IOException
     {
-        //TODO Implement.
-        return -1;
+        
+        String u = "https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=" +dNum + "," + dStreet.replace(" ", "+")
+                + "," +dSuburb + "&destinations=" + cNum + "," + cStreet.replace(" ", "+") + "," + cSuburb + "&key=AIzaSyB8nyO1LPGEbQexKvRXaVCWKUyVOWcRS-k";
+        URL url = new URL(u);
+        BufferedReader s = new BufferedReader(new InputStreamReader(url.openStream()));
+        String inp;
+        double time;
+        try 
+        {
+            while((inp = s.readLine()) != null && !inp.contains("duration"))
+            {
+                System.out.println(inp);
+            }
+            inp = s.readLine();
+            inp = s.readLine();
+            time = Double.parseDouble(inp.split(":")[1].replace(" ", ""));
+        } 
+        finally 
+        {
+          s.close();
+        }
+        return time;
     }
     
 }
