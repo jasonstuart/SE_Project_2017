@@ -105,6 +105,23 @@ public class Client extends Thread
                     out.writeBytes("UPTODATE");
                 }
             }
+            else if(function.equalsIgnoreCase("login"))
+            {
+                String JSON = in.readLine();
+                JSON_Handler temp = new JSON_Handler(JSON);
+                String[] value = temp.getValueFromVar("username").split("_");
+                String sql = "SELECT * FROM Driver WHERE First_Name =" + value[0] + " AND Driver_Last_Name = " + value[1]+ ";";
+                System.out.println(sql);
+                ResultSet result = WitsCABS_Backend.sendSQLQuery(sql);
+                if(result.getString("Driver_Password").equals(temp.getValueFromVar("password")))
+                {
+                    out.writeBytes("SUCCESS");
+                }
+                else
+                {
+                    out.writeBytes("FAIL");
+                }
+            }
             else
             {
                 out.writeBytes("NOT UNDERSTOOD\n");
