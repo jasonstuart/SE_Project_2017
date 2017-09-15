@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="WitsCABS_Backend">
+  <ClassDiagramComponents>
+    <Class name="Client" package="witscabs_backend" visibility="public" xPosition="8.0" yPosition="20.0">
+      <Fields>
+        <Field name="c" type="Socket" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Socket" name="client"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="run" returnType="//part of thread, each time this is called, a new thread is started. void" visibility="public"/>
+        <Method name="status" returnType="void" visibility="public" isStatic="true">
+          <Argument type="BufferedReader" name="in"/>
+          <Argument type="DataOutputStream" name="out"/>
+        </Method>
+        <Method name="login" returnType="void" visibility="public" isStatic="true">
+          <Argument type="BufferedReader" name="in"/>
+          <Argument type="DataOutputStream" name="out"/>
+        </Method>
+        <Method name="update" returnType="void" visibility="public" isStatic="true">
+          <Argument type="BufferedReader" name="in"/>
+          <Argument type="DataOutputStream" name="out"/>
+        </Method>
+        <Method name="newDriver" returnType="void" visibility="public" isStatic="true">
+          <Argument type="BufferedReader" name="in"/>
+          <Argument type="DataOutputStream" name="out"/>
+        </Method>
+        <Method name="newCustomer" returnType="void" visibility="public" isStatic="true">
+          <Argument type="BufferedReader" name="in"/>
+          <Argument type="DataOutputStream" name="out"/>
+        </Method>
+        <Method name="assignDriver" returnType="int" visibility="public" isStatic="true">
+          <Argument type="ResultSet" name="r"/>
+          <Argument type="String" name="num"/>
+          <Argument type="String" name="street"/>
+          <Argument type="String" name="suburb"/>
+        </Method>
+        <Method name="getDistance" returnType="double" visibility="public" isStatic="true">
+          <Argument type="String" name="dNum"/>
+          <Argument type="String" name="dStreet"/>
+          <Argument type="String" name="dSuburb"/>
+          <Argument type="String" name="cNum"/>
+          <Argument type="String" name="cStreet"/>
+          <Argument type="String" name="cSuburb"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="JSON_Handler" package="witscabs_backend" visibility="public" xPosition="678.0" yPosition="20.0">
+      <Fields>
+        <Field name="varName" type="String[]" visibility="private"/>
+        <Field name="varType" type="String[]" visibility="private"/>
+        <Field name="value" type="String[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="input"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getValueFromVar" returnType="String" visibility="public">
+          <Argument type="String" name="in"/>
+        </Method>
+        <Method name="getWholeValue" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Server" package="witscabs_backend" visibility="public" xPosition="20.0" yPosition="324.0">
+      <Fields>
+        <Field name="s" type="ServerSocket" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="startServer" returnType="ServerSocket" visibility="public">
+          <Argument type="int" name="portNum"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="WitsCABS_Backend" package="witscabs_backend" visibility="public" xPosition="434.0" yPosition="315.0">
+      <Fields>
+        <Field name="connection" type="Connection" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="setupDatabaseConnection" returnType="Connection" visibility="public" isStatic="true"/>
+        <Method name="sendSQLQuery" returnType="ResultSet" visibility="public" isStatic="true">
+          <Argument type="String" name="sql"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="Starts" source="witscabs_backend.WitsCABS_Backend" target="witscabs_backend.Server" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

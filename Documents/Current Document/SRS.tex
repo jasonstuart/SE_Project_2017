@@ -29,7 +29,7 @@ The Back-end of our system will make use of Java as well as JSON. This will cons
 \includegraphics[scale=0.8]{user_flow}
 \pagebreak
 \subsection{Overview}
-The document will be broken up into multiple sections. As already mentioned before in the document, we have given an introduction as to why this document has been typed up, the objectives to be met, and the problem statement that describes the problem at hand. The scope of what the project is all about and a basic description of the required features needed to be implemented is also discussed above. We also discuss the relevant stakeholders next. In section 2, an analysis of how the project will be conducted is discussed. This includes a discussion of system architecture types, software required for the project, as well as how the team will be managed and handled during development. In section 3, a list of formal required functions will be provided for both front-end software as well as the backend. Section 4 will then contain relevant documentation related to Sprint Planning as well as Sprint Retrospectives for the SCRUM Methodology. Then The document will discuss how to evaluate the software for the project owner's use in Section 5. Finally a list of responsibilities and credentials is provided in section 6.
+The document will be broken up into multiple sections. As already mentioned before in the document, we have given an introduction as to why this document has been typed up, the objectives to be met, and the problem statement that describes the problem at hand. The scope of what the project is all about and a basic description of the required features needed to be implemented is also discussed above. We also discuss the relevant stakeholders next. In section 2, an analysis of how the project will be conducted is discussed. This includes a discussion of system architecture types, software required for the project, as well as how the team will be managed and handled during development. In section 3, a list of formal required functions will be provided for both front-end software as well as the back-end. Section 4 will then go into the design documentation, such as Database design, e.t.c. Section 5 will then contain relevant documentation related to Sprint Planning as well as Sprint Retrospectives for the SCRUM Methodology. Then The document will discuss how to evaluate the software for the project owner's use in Section 6. Finally a list of responsibilities and credentials is provided in section 7.
 \subsection{Stakeholders}
 The following people have an interest in this project:
 \subsubsection{Users}
@@ -116,6 +116,15 @@ Once the driver has been allocated, a notification will be sent firstly to the d
 \end{description}
 \pagebreak
 
+\section{Design Documentation}
+\subsection{Database Design}
+\includegraphics[scale=0.5]{Database_Diagram}
+The approach taken here is to achieve as minimalistic approach, storing the least amount of information possible. Hence we just have 3 tables, one for the customer and their details, one for the driver and their details and a bridge entity to match the two together. To simplify things, we decided that if a driver is part of a rank, their home address details become the ranks address. We also made it that the customers do not have to each time log in, they just call and create a new customer each time for convenience.
+
+\subsection{Server Design}
+\includegraphics[scale=0.5]{Server_UML}
+When designing the server, we as a group decided that it would be best to make sure efficiency was our main priority, especially due to the networking specifics required. Hence we went for a minimalist approach and kept all networking as simple as possible. We also made use of threads to improve response time when multiple queries came in at once, as each thread could handle a request at the same time. Further, we decided to separate the code into multiple classes and methods to make the code more understandable and easier to read, as well as make sure that there is upgradability and maintainability with the code, for further development. The image above describes the class diagram that links all the classes together.
+\newpage
 \section{SCRUM Documentation}
 Note: Each sprint has a length of 1 week.
 \subsection{Sprint 1: 7 September 2017}
@@ -160,6 +169,7 @@ Begin basic testing of server functionality and find bugs & Jason \\ \hline
 \subsubsection{Sprint Retrospective}
 TODO 21 September
 
+\newpage
 \section{Evaluation}
 \subsection{Compiling And Running Code}
 \subsubsection{Desktop Application}
