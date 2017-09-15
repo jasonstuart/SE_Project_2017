@@ -25,22 +25,23 @@ public class WitsCABS_Backend {
      * @throws java.sql.SQLException
      * @throws java.io.IOException
      */
-    public static void main(String[] args) throws SQLException, IOException{
+    public static void main(String[] args) throws SQLException, IOException{ //entry point into server
         connection = setupDatabaseConnection(); //setup database connection
         ServerSocket s = new Server().startServer(9987); //start server to listen for connections
         boolean run = true;
-        while(run)
+        while(run) //keep checking for new connections.
         {
             Client client = new Client(s.accept());
             System.out.println("Incoming Connection!");
             client.start();
         }
-        //test(connection);
         connection.close();
     }
     
+    //method to connect to mysql server to access database. 
     public static Connection setupDatabaseConnection()
     {
+        //server specifics
         String url = "jdbc:mysql://localhost:3306/WitsCABS?useSSL=false";
         String username = "root";
         String password = "jason";
@@ -48,28 +49,34 @@ public class WitsCABS_Backend {
         System.out.println("Connecting database...");
         try 
         {
+            //try get connection
             connection = DriverManager.getConnection(url, username, password);
         } catch (SQLException ex) 
         {
+            //connection failed
             System.out.println("Cannot Connect to database, reason:" + ex);
         }
         System.out.println("Database Connected");
         return connection;
     }
     
+    //send query to database and get response dependent on query type.
     public static ResultSet sendSQLQuery(String sql)
     {
         try 
         {
+            //create a statement.
             Statement s = connection.createStatement();
-            if(sql.contains("SELECT"))
+            if(sql.contains("SELECT")) //check if select (for result set) or anything else (no result set)
             {
+                //needs to return results, construct it and return
                 ResultSet rs = s.executeQuery(sql);
                 System.out.println(rs);
                 return rs;
             }
             else
             {
+                //no result set, so just execute and output success code.
                 int r = s.executeUpdate(sql);
                 System.out.println(r);
                 return null;

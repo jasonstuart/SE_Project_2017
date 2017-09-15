@@ -12,6 +12,7 @@ import java.net.ServerSocket;
  *
  * @author Jason
  */
+//Server Class that handles all server settings
 public class Server
 {
     private ServerSocket s;
@@ -23,6 +24,7 @@ public class Server
     
     public ServerSocket startServer(int portNum)
     {
+        //starts the server to start listening for connections.
         System.out.println("Starting Server Socket...");
         try 
         {
