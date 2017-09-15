@@ -3,19 +3,23 @@
 \graphicspath{{images/}}
 
 \begin{document}
-\title{Software Requirements Specification for WitsCABS\\Lab 2 Submission - Group 10}\author{1171733 - Jason Stuart (GL), 669006 - Rashad Akoodie, \\1064934 - Robert Basson and 886515 - Amine Boukrout}
+\title{WitsCABS Documentation\\Group 10}
+\author{\underline{Front End} \\886515 - Amine Boukrout, 669006 - Rashad Akoodie\\\underline{Back End}\\1064934 - Robert Basson, 1171733 - Jason Stuart (GL)\\ \\ Group Leader: 1171733 - Jason Stuart\\ \\}
 \date{\today}
 \maketitle
 \newpage
 \tableofcontents
 \newpage
-
 \section{Introduction}
 \subsection{Purpose}
 The purpose of this document is to describe what is required for the development of WITSCABS (a lift service similar to the one provided by Uber). This document is meant to convey how we have decided to develop our system and the functionality required for the first release. This will be achieved through a description of the scope of the software being designed, so that the project bounds are clearly defined, in order to prevent scope creep. The document will then for both the front and back ends describe their functional requirements.There will also be a description of the software required to be integrated with our software solution in order for it to be functional according to the requirements. 
 In addition to this, a fully descriptive documentation of all programming techniques as well as software engineering techniques that we as a group will follow during development will be included. These techniques will be substantiated in order to provide a clear systematic approach to the complete design of our project. Furthermore, all resources consulted will be included as well.
 \subsection{Problem Statement}
 WITS students often require transport to get them from place to place, it could be to and from a place of residence, shopping centers, places to support wits sports, internet cafes etc. Wits would like to implement a transport system similar to Uber that Wits students are able to use as a means of travel.
+
+\subsection{Project Objective}
+The objective of this project is not only to learn and make use of specific design procedures and team management skills, but also to further our skills in development of software using specific techniques that will be used in industry. Further, the objective is to have a working prototype of the WitsCABS project by the end, using these skills so that we are more comfortable when going into industry.
+\newpage
 
 \subsection{Scope}
 Our core objective is to design, develop and implement a software system which will be used to manage a fleet of taxi-cabs for a company (as per the project brief). Our company, WitsCABS Company, will be independently run and will employ our own staff/drivers. Vehicles however may either be owned by WitsCABS Company or by the drivers. The service will run based on service zones within the city of operation i.e. the city will be split into various sectors which will allow for more efficient ride time. Each driver will be equipped with a smart-phone embedded with GPS, maps and a navigational tracking system. All vehicles being dispatched will be on instruction from the 24-hour manned Dispatching Control Centre (DCC) which will be in direct contact with clients via calls to the centre.
@@ -25,7 +29,18 @@ The Back-end of our system will make use of Java as well as JSON. This will cons
 \includegraphics[scale=0.8]{user_flow}
 \pagebreak
 \subsection{Overview}
-The document will be broken up into multiple sections. As already mentioned before in the document, we have given an introduction as to why this document has been typed up, as well as a scope of what the project is all about and a basic description of the required features needed to be implemented.\\\\ In section 2, an analysis of how the project will be conducted is discussed. This includes a discussion of system architecture types, software required for the project, as well as how the team will be managed and handled during development. \\\\In section 3, a list of formal required functions will be provided for both front-end software as well as the back-end.
+The document will be broken up into multiple sections. As already mentioned before in the document, we have given an introduction as to why this document has been typed up, the objectives to be met, and the problem statement that describes the problem at hand. The scope of what the project is all about and a basic description of the required features needed to be implemented is also discussed above. We also discuss the relevant stakeholders next. In section 2, an analysis of how the project will be conducted is discussed. This includes a discussion of system architecture types, software required for the project, as well as how the team will be managed and handled during development. In section 3, a list of formal required functions will be provided for both front-end software as well as the backend. Section 4 will then contain relevant documentation related to Sprint Planning as well as Sprint Retrospectives for the SCRUM Methodology. Then The document will discuss how to evaluate the software for the project owner's use in Section 5. Finally a list of responsibilities and credentials is provided in section 6.
+\subsection{Stakeholders}
+The following people have an interest in this project:
+\subsubsection{Users}
+The future users of this project, being students that require transport within service areas, will be keen to use this software as transport is still a major issue in South africa. This often leads to people not getting to their destination on time, a key factor for many. Hence these users will be keen to know how this software turns out.
+\subsubsection{Developers}
+Apart from the developers having to do this for their job, they too will be interested in making sure this project flows and is completed by the end of it, as it will further develop their skills as well as could help them further once the project is completed. 
+\subsubsection{Project Management}
+Project Managers, the ones who handle the project at an administration level also have similar goals to developers.
+\subsubsection{Project Owners}
+These are the people who initiated the idea of this project and have since contacted us to implement such a project. This will provide good gains to them as it will improve the reputation of their company as they try to solve a common problem in South Africa.
+
 \pagebreak
 \section{Analysis}
 \subsection{Team Administration}
@@ -101,6 +116,50 @@ Once the driver has been allocated, a notification will be sent firstly to the d
 \end{description}
 \pagebreak
 
+\section{SCRUM Documentation}
+Note: Each sprint has a length of 1 week.
+\subsection{Sprint 1: 7 September 2017}
+
+\subsubsection{Sprint Planning Documentation}
+\begin{tabular}{|p{9.5cm}|p{3.5cm}|}
+\hline
+Task & Assigned \\ \hline
+Create Database Structure & Jason \\ \hline
+Implement Server Socket for backend & Jason \\ \hline
+Implement Threading for server & Jason \\ \hline
+Implement Call Center App & Robert \\ \hline
+Link Call Center and Backend Together & Robert And Jason \\ \hline
+Construct Android Screens & Amine and Rashad \\ \hline
+Analyze Google API for use & Jason \\ \hline
+\end{tabular}
+
+\subsubsection{Sprint Retrospective}
+\underline{Overview}\\
+All Tasks Completed Successfully Except for the Android Screens. Amine and Rashad encountered a strange bug that would not allow them to compile their code, hence they have been held up and have not met the deadline. Their team has gone to get assistance with the bug from staff who are knowledgeable with android development. \\ Robert Successfully completed the Call Center Screens within 2 days, but the holdup was implementing the networking code as we had issues with the proxy blocking our connection. We found a workaround and now have a working connection. \\ Jason installed and created the mysql database as discussed in the planning stages of the project. He also implemented the server networking code and Threading code as well. He also helped Robert connect the applications together. He further went on to analyze the google api and even implemented it into the server code ahead of schedule.\\\
+\underline{Negatives}\\
+Currently the android team is behind schedule due to the bug. Hence it is critical that they can recover from this situation and catch up. This means they will have to work extra hard this next week. Also the networking methodology was not clearly described by Jason until later on in the week, as he was still implementing the code, hence the networking of Robert's code could not be implemented yet. \\\
+\underline{Positives}\\
+Jason managed to get ahead of schedule and implement slightly more than what was required for the week. This puts us in a relatively good spot as more time can go into making sure the server is working to its optimal pace. Communication within the team on each day was also excellent, with each member checking in on google hangouts for the daily standup meeting. The android team also immediately let all involved know that they had run into this IDE bug. 
+
+\subsection{Sprint 2: 15 September 2017}
+\subsubsection{Sprint Planning Document}
+\begin{tabular}{|p{9.5cm}|p{3.5cm}|}
+\hline
+Task & Assigned \\ \hline
+Implement all Server functionality required for both front-ends & Jason \\ \hline
+Finish Android Screens & Amine and Rashad \\ \hline
+Implement networking code for android app to server & Amine and Rashad \\ \hline
+Implement functionality of basic functions for android prototype & Amine and Rashad \\ \hline
+Implement Google Maps API into android app & Amine and Rashad \\ \hline
+Touch up beauty aspects of Call center app & Robert \\ \hline
+Test Connection and functionality between server and call center & Jason and Robert \\ \hline
+Begin basic testing of server functionality and find bugs & Jason \\ \hline
+
+\end{tabular}
+
+\subsubsection{Sprint Retrospective}
+TODO 21 September
+
 \section{Evaluation}
 \subsection{Compiling And Running Code}
 \subsubsection{Desktop Application}
@@ -120,9 +179,11 @@ To run the database, follow the similar setup as for the desktop application, i.
 \setlength\itemsep{0em}
 \item Purpose by Robert, Rashad, and Jason (Section 1.1)
 \item Problem Statement by Robert (Section 1.2)
-\item Scope by Amine (Section 1.3)
+\item Project Objective by Jason (Section 1.3)
+\item Scope by Amine (Section 1.4)
 \item Image Process Diagram by Robert
-\item Overview by Jason (Section 1.4)
+\item Overview by Jason (Section 1.5)
+\item Stakeholders by Jason (Section 1.6)
 \item Team Management by Jason (Section 2.1.1)
 \item Team Meetings by Jason (Section 2.1.2)
 \item System Architecture Analysis by Jason (Section 2.2)

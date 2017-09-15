@@ -1,29 +1,42 @@
-\contentsline {section}{\numberline {1}Introduction}{3}
-\contentsline {subsection}{\numberline {1.1}Purpose}{3}
-\contentsline {subsection}{\numberline {1.2}Problem Statement}{3}
-\contentsline {subsection}{\numberline {1.3}Scope}{3}
-\contentsline {subsection}{\numberline {1.4}Overview}{6}
-\contentsline {section}{\numberline {2}Analysis}{7}
-\contentsline {subsection}{\numberline {2.1}Team Administration}{7}
-\contentsline {subsubsection}{\numberline {2.1.1}Team Management}{7}
-\contentsline {subsubsection}{\numberline {2.1.2}Team Meetings}{8}
-\contentsline {subsubsection}{\numberline {2.1.3}Responsibilities of Team}{8}
-\contentsline {subsection}{\numberline {2.2}System Architecture Analysis}{8}
-\contentsline {subsection}{\numberline {2.3}Analysis of Front-end System (Mobile App)}{9}
-\contentsline {subsection}{\numberline {2.4}Analysis of Front-End System (Desktop App)}{10}
-\contentsline {subsection}{\numberline {2.5}Analysis of Back-End System}{10}
-\contentsline {subsection}{\numberline {2.6}Additional Software APIs Required}{11}
-\contentsline {subsection}{\numberline {2.7}Analysis of Inputs and Outputs}{11}
-\contentsline {subsubsection}{\numberline {2.7.1}Inputs}{11}
-\contentsline {subsubsection}{\numberline {2.7.2}Outputs}{11}
-\contentsline {section}{\numberline {3}Functional Requirements}{13}
-\contentsline {subsection}{\numberline {3.1}Front-End Mobile App}{13}
-\contentsline {subsection}{\numberline {3.2}Front-End Desktop Application}{13}
-\contentsline {subsection}{\numberline {3.3}Back-End Server}{13}
-\contentsline {section}{\numberline {4}Evaluation}{14}
-\contentsline {subsection}{\numberline {4.1}Compiling And Running Code}{14}
-\contentsline {subsubsection}{\numberline {4.1.1}Desktop Application}{14}
-\contentsline {subsubsection}{\numberline {4.1.2}Server}{14}
-\contentsline {section}{\numberline {5}Credentials}{16}
-\contentsline {subsection}{\numberline {5.1}The Credentials}{16}
-\contentsline {subsection}{\numberline {5.2}Task and Responsibilities Dedications}{16}
+\contentsline {section}{\numberline {1}Introduction}{4}
+\contentsline {subsection}{\numberline {1.1}Purpose}{4}
+\contentsline {subsection}{\numberline {1.2}Problem Statement}{4}
+\contentsline {subsection}{\numberline {1.3}Project Objective}{4}
+\contentsline {subsection}{\numberline {1.4}Scope}{5}
+\contentsline {subsection}{\numberline {1.5}Overview}{7}
+\contentsline {subsection}{\numberline {1.6}Stakeholders}{7}
+\contentsline {subsubsection}{\numberline {1.6.1}Users}{7}
+\contentsline {subsubsection}{\numberline {1.6.2}Developers}{7}
+\contentsline {subsubsection}{\numberline {1.6.3}Project Management}{7}
+\contentsline {subsubsection}{\numberline {1.6.4}Project Owners}{8}
+\contentsline {section}{\numberline {2}Analysis}{9}
+\contentsline {subsection}{\numberline {2.1}Team Administration}{9}
+\contentsline {subsubsection}{\numberline {2.1.1}Team Management}{9}
+\contentsline {subsubsection}{\numberline {2.1.2}Team Meetings}{10}
+\contentsline {subsubsection}{\numberline {2.1.3}Responsibilities of Team}{10}
+\contentsline {subsection}{\numberline {2.2}System Architecture Analysis}{10}
+\contentsline {subsection}{\numberline {2.3}Analysis of Front-end System (Mobile App)}{11}
+\contentsline {subsection}{\numberline {2.4}Analysis of Front-End System (Desktop App)}{12}
+\contentsline {subsection}{\numberline {2.5}Analysis of Back-End System}{12}
+\contentsline {subsection}{\numberline {2.6}Additional Software APIs Required}{13}
+\contentsline {subsection}{\numberline {2.7}Analysis of Inputs and Outputs}{13}
+\contentsline {subsubsection}{\numberline {2.7.1}Inputs}{13}
+\contentsline {subsubsection}{\numberline {2.7.2}Outputs}{13}
+\contentsline {section}{\numberline {3}Functional Requirements}{15}
+\contentsline {subsection}{\numberline {3.1}Front-End Mobile App}{15}
+\contentsline {subsection}{\numberline {3.2}Front-End Desktop Application}{15}
+\contentsline {subsection}{\numberline {3.3}Back-End Server}{15}
+\contentsline {section}{\numberline {4}SCRUM Documentation}{16}
+\contentsline {subsection}{\numberline {4.1}Sprint 1: 7 September 2017}{16}
+\contentsline {subsubsection}{\numberline {4.1.1}Sprint Planning Documentation}{16}
+\contentsline {subsubsection}{\numberline {4.1.2}Sprint Retrospective}{16}
+\contentsline {subsection}{\numberline {4.2}Sprint 2: 15 September 2017}{17}
+\contentsline {subsubsection}{\numberline {4.2.1}Sprint Planning Document}{17}
+\contentsline {subsubsection}{\numberline {4.2.2}Sprint Retrospective}{17}
+\contentsline {section}{\numberline {5}Evaluation}{17}
+\contentsline {subsection}{\numberline {5.1}Compiling And Running Code}{17}
+\contentsline {subsubsection}{\numberline {5.1.1}Desktop Application}{17}
+\contentsline {subsubsection}{\numberline {5.1.2}Server}{18}
+\contentsline {section}{\numberline {6}Credentials}{19}
+\contentsline {subsection}{\numberline {6.1}The Credentials}{19}
+\contentsline {subsection}{\numberline {6.2}Task and Responsibilities Dedications}{19}

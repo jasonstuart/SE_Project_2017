@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.6)  8 SEP 2017 09:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.6)  15 SEP 2017 12:47
 entering extended mode
 **./SRS.tex
 (SRS.tex
@@ -145,9 +145,9 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 8.
+(Font)              <14.4> on input line 9.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 8.
+(Font)              <7> on input line 9.
  [1
 
 {C:/Users/Jason/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (SRS.toc
@@ -159,11 +159,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 2.
 Missing character: There is no Â in font cmr12!
 Missing character: There is no ’ in font cmr12!
-)
+ [2])
 \tf@toc=\write3
 \openout3 = `SRS.toc'.
 
- [2]
+ [3] [4]
 Missing character: There is no Â in font cmr12!
 Missing character: There is no “ in font cmr12!
 Missing character: There is no Â in font cmr12!
@@ -178,129 +178,130 @@ Missing character: There is no Â in font cmr12!
 Missing character: There is no ” in font cmr12!
 Missing character: There is no Â in font cmr12!
 Missing character: There is no ’ in font cmr12!
- <images/user_flow.jpg, id=11, 579.66562pt x 508.90125pt>
+
+<images/user_flow.jpg, id=17, 579.66562pt x 508.90125pt>
 File: images/user_flow.jpg Graphic file (type jpg)
 
 <use images/user_flow.jpg>
-Package pdftex.def Info: images/user_flow.jpg used on input line 25.
+Package pdftex.def Info: images/user_flow.jpg used on input line 29.
 (pdftex.def)             Requested size: 463.73312pt x 407.12155pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--27
+Underfull \hbox (badness 10000) in paragraph at lines 25--31
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--27
+Underfull \hbox (badness 10000) in paragraph at lines 25--31
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--27
+Underfull \hbox (badness 10000) in paragraph at lines 25--31
 
  []
 
 
-Overfull \hbox (73.73312pt too wide) in paragraph at lines 21--27
+Overfull \hbox (73.73312pt too wide) in paragraph at lines 25--31
 []
  []
 
-[3] [4] [5 <./images/user_flow.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 28--30
+[5] [6 <./images/user_flow.jpg>] [7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--30
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 33--35
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--35
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--35
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--35
-
- []
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 46--47
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 46--47
-
- []
-
-[8]
-Missing character: There is no Â in font cmr12!
-Missing character: There is no ’ in font cmr12!
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--51
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--51
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--55
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--55
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 56--60
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
 
 [10]
+Missing character: There is no Â in font cmr12!
+Missing character: There is no ’ in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--70
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 71--75
+
+ []
+
+[12]
 Missing character: There is no Â in font cmbx12!
 Missing character: There is no ’ in font cmbx12!
 Missing character: There is no Â in font cmr12!
 Missing character: There is no ’ in font cmr12!
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--63
+Underfull \hbox (badness 10000) in paragraph at lines 76--78
 
  []
 
-[11] [12] [13] [14] [15]
+[13] [14] [15]
+Overfull \hbox (3.88582pt too wide) in paragraph at lines 124--135
+[] 
+ []
+
+[16]
+Overfull \hbox (3.88582pt too wide) in paragraph at lines 146--159
+[] 
+ []
+
+[17] [18]
 Missing character: There is no Â in font cmr12!
 Missing character: There is no ’ in font cmr12!
- [16] (SRS.aux) ) 
+ [19] (SRS.aux) ) 
 Here is how much of TeX's memory you used:
  1502 strings out of 493323
  22125 string characters out of 3130016
- 85861 words of memory out of 3000000
+ 84861 words of memory out of 3000000
  5047 multiletter control sequences out of 15000+200000
  8808 words of font info for 31 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,6n,25p,1508b,201s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,9n,25p,1508b,201s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Jason/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmbx12.pfb><C:/Users/Jason/AppData/Local/Programs/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Jason/AppData/Local/Program
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on SRS.pdf (16 pages, 122032 bytes).
+Output written on SRS.pdf (19 pages, 128021 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
+ 77 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
