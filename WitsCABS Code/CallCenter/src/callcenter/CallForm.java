@@ -20,12 +20,12 @@ import javax.swing.JOptionPane;
  * @author Robert
  */
 
-public class CallForm extends javax.swing.JFrame {
+public class CallForm extends javax.swing.JFrame {//just a class that helps us handle addresses rather than haave to do character handling later
   public class Address{
       int Num;
       String Name,Suburb;
       
-      public Address(int x,String s,String b){
+      public Address(int x,String s,String b){//constructor that takes in the number, street name and suburb
        this.Num = x;
        this.Name = s;
        this.Suburb = b;
@@ -215,15 +215,15 @@ public class CallForm extends javax.swing.JFrame {
         location = txtAdr.getText();
         numLoc = Integer.parseInt(txtNumLoc.getText());
         locSuburb = (String)comSuburb.getSelectedItem();
-        Address Location = new Address(numLoc, location, locSuburb);        
+        Address Location = new Address(numLoc, location, locSuburb);//creates an address object for the users current location        
         numDes = Integer.parseInt(txtNumDes.getText());
         destination = txtAdrDes.getText();
         desSuburb = (String)comSuburbDes.getSelectedItem();
         phoneNumber = txtPhoneNumber.getText();
-        Address Destination = new Address(numDes,destination,desSuburb);
+        Address Destination = new Address(numDes,destination,desSuburb);//creates an address object for the users destination
         boolean success = false;
         try {
-            success = sendServer(name, description, phoneNumber, Location, Destination);
+            success = sendServer(name, description, phoneNumber, Location, Destination);//sends the various details to the server
         } catch (IOException ex) {
             Logger.getLogger(CallForm.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -250,13 +250,13 @@ public class CallForm extends javax.swing.JFrame {
     {
         try 
         {
-            Socket client = new Socket("192.168.0.9", 9987);
+            Socket client = new Socket("192.168.0.9", 9987);//Establishes a connection to the server over the network
             DataOutputStream out = new DataOutputStream(client.getOutputStream());
             BufferedReader read = new BufferedReader(new InputStreamReader(client.getInputStream()));
             out.writeBytes("newCustomer\n");
             String resp = read.readLine();
             if(resp.equals("OK"))
-            {
+            {//sends a message to the server in the JSON format
                 String s= "{\"name\":\""+Name+"\""+",";
                 s = s+ "\"description\":\""+Desc+"\""+",";
                 s = s+ "\"phonenumber\":\""+phoneNumber+"\""+",";
@@ -268,9 +268,9 @@ public class CallForm extends javax.swing.JFrame {
                 s = s+ "\"dessuburb\":\""+Destination.Suburb+"\""+"}\n";
                 out.writeBytes(s);
                 System.out.println(s);
-                String Response = read.readLine();
+                String Response = read.readLine();//used to check if message was successfully sent
                 System.out.println(Response);
-                out.close();
+                out.close();//closes the connection
                 read.close();
                 client.close();
                 return true;
