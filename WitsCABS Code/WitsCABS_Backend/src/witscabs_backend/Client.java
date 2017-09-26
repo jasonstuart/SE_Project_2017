@@ -163,6 +163,7 @@ public class Client extends Thread
     public static void newDriver(BufferedReader in, DataOutputStream out) throws IOException, SQLException
     {
         //new driver being created, so read JSON file with all details and insert into the database for use lated
+        System.out.println("newDriver called");
         String JSON = in.readLine();
         JSON_Handler temp = new JSON_Handler(JSON);
         String sql = "INSERT INTO Driver(First_Name, Last_Name,Phone_Number, Car_Registration, Car_Make, Car_Colour,"
