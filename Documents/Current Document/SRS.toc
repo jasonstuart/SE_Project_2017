@@ -29,20 +29,22 @@
 \contentsline {section}{\numberline {4}Design Documentation}{16}
 \contentsline {subsection}{\numberline {4.1}Database Design}{16}
 \contentsline {subsection}{\numberline {4.2}Server Design}{17}
-\contentsline {section}{\numberline {5}SCRUM Documentation}{18}
-\contentsline {subsection}{\numberline {5.1}Sprint 1: 7 September 2017}{18}
-\contentsline {subsubsection}{\numberline {5.1.1}Sprint Planning Documentation}{18}
-\contentsline {subsubsection}{\numberline {5.1.2}Sprint Retrospective}{18}
-\contentsline {subsection}{\numberline {5.2}Sprint 2: 15 September 2017}{20}
-\contentsline {subsubsection}{\numberline {5.2.1}Sprint Planning Document}{20}
-\contentsline {subsubsection}{\numberline {5.2.2}Sprint Retrospective}{20}
-\contentsline {subsection}{\numberline {5.3}Sprint 3: 22 September 2017}{21}
-\contentsline {subsubsection}{\numberline {5.3.1}Sprint Planning Document}{21}
-\contentsline {subsubsection}{\numberline {5.3.2}Sprint Retrospective}{21}
-\contentsline {section}{\numberline {6}Evaluation}{22}
-\contentsline {subsection}{\numberline {6.1}Compiling And Running Code}{22}
-\contentsline {subsubsection}{\numberline {6.1.1}Desktop Application}{22}
-\contentsline {subsubsection}{\numberline {6.1.2}Server}{22}
-\contentsline {section}{\numberline {7}Credentials}{24}
-\contentsline {subsection}{\numberline {7.1}The Credentials}{24}
-\contentsline {subsection}{\numberline {7.2}Task and Responsibilities Dedications}{24}
+\contentsline {subsubsection}{\numberline {4.2.1}Class Diagram}{17}
+\contentsline {subsubsection}{\numberline {4.2.2}Sequence Diagrams}{18}
+\contentsline {subsubsection}{\numberline {4.2.3}State Machine Transition Diagram}{19}
+\contentsline {section}{\numberline {5}SCRUM Documentation}{20}
+\contentsline {subsection}{\numberline {5.1}Sprint 1: 7 September 2017}{20}
+\contentsline {subsubsection}{\numberline {5.1.1}Sprint Planning Documentation}{20}
+\contentsline {subsubsection}{\numberline {5.1.2}Sprint Retrospective}{20}
+\contentsline {subsection}{\numberline {5.2}Sprint 2: 15 September 2017}{22}
+\contentsline {subsubsection}{\numberline {5.2.1}Sprint Planning Document}{22}
+\contentsline {subsubsection}{\numberline {5.2.2}Sprint Retrospective}{22}
+\contentsline {subsection}{\numberline {5.3}Sprint 3: 22 September 2017}{23}
+\contentsline {subsubsection}{\numberline {5.3.1}Sprint Planning Document}{23}
+\contentsline {subsubsection}{\numberline {5.3.2}Sprint Retrospective}{23}
+\contentsline {section}{\numberline {6}Evaluation}{24}
+\contentsline {subsection}{\numberline {6.1}Compiling And Running Code}{24}
+\contentsline {subsubsection}{\numberline {6.1.1}Desktop Application}{24}
+\contentsline {subsubsection}{\numberline {6.1.2}Server}{24}
+\contentsline {section}{\numberline {7}Credentials}{26}
+\contentsline {subsection}{\numberline {7.1}The Credentials}{26}

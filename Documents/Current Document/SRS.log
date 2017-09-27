@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.6)  22 SEP 2017 11:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.6)  27 SEP 2017 12:05
 entering extended mode
 **./SRS.tex
 (SRS.tex
@@ -288,37 +288,71 @@ Overfull \hbox (62.18828pt too wide) in paragraph at lines 121--123
 File: images/Server_UML.png Graphic file (type png)
 
 <use images/Server_UML.png>
-Package pdftex.def Info: images/Server_UML.png used on input line 125.
+Package pdftex.def Info: images/Server_UML.png used on input line 126.
 (pdftex.def)             Requested size: 454.19577pt x 249.43126pt.
 
-Overfull \hbox (64.19577pt too wide) in paragraph at lines 125--127
+Overfull \hbox (64.19577pt too wide) in paragraph at lines 126--128
 []
  []
 
 [16 <./images/Database_Diagram.png>] [17 <./images/Server_UML.png (PNG copy)>]
-Overfull \hbox (3.88582pt too wide) in paragraph at lines 133--144
+<images/CreateSequenceDiagram.png, id=63, 854.19125pt x 543.02875pt>
+File: images/CreateSequenceDiagram.png Graphic file (type png)
+
+<use images/CreateSequenceDiagram.png>
+Package pdftex.def Info: images/CreateSequenceDiagram.png used on input line 13
+0.
+(pdftex.def)             Requested size: 427.09459pt x 271.5137pt.
+
+<images/GetDataSequenceDiagram.png, id=64, 838.13126pt x 543.02875pt>
+File: images/GetDataSequenceDiagram.png Graphic file (type png)
+
+<use images/GetDataSequenceDiagram.png>
+Package pdftex.def Info: images/GetDataSequenceDiagram.png used on input line 1
+32.
+(pdftex.def)             Requested size: 419.0646pt x 271.5137pt.
+
+Overfull \hbox (37.09459pt too wide) in paragraph at lines 130--134
+[]
+ []
+
+
+Overfull \hbox (29.0646pt too wide) in paragraph at lines 130--134
+[]
+ []
+
+[18 <./images/CreateSequenceDiagram.png>]
+<images/statemachinediagram.png, id=69, 684.5575pt x 108.405pt>
+File: images/statemachinediagram.png Graphic file (type png)
+
+<use images/statemachinediagram.png>
+Package pdftex.def Info: images/statemachinediagram.png used on input line 136.
+
+(pdftex.def)             Requested size: 342.27791pt x 54.20236pt.
+ [19 <./images/GetDataSequenceDiagram.png> <./images/statemachinediagram.png>]
+Overfull \hbox (3.88582pt too wide) in paragraph at lines 144--155
 [] 
  []
 
-[18] [19]
-Overfull \hbox (3.88582pt too wide) in paragraph at lines 157--170
+[20] [21]
+Overfull \hbox (3.88582pt too wide) in paragraph at lines 168--181
 [] 
  []
 
 
-Overfull \hbox (3.88582pt too wide) in paragraph at lines 181--189
+Overfull \hbox (3.88582pt too wide) in paragraph at lines 192--200
 [] 
  []
 
-[20] [21] [22] [23]
+[22] [23] [24] [25]
 Missing character: There is no Â in font cmr12!
 Missing character: There is no ’ in font cmr12!
- [24] (SRS.aux) ) 
+ [26] (SRS.aux) ) 
 Here is how much of TeX's memory you used:
- 1512 strings out of 493323
- 22389 string characters out of 3130016
+ 1527 strings out of 493323
+ 22900 string characters out of 3130016
  84861 words of memory out of 3000000
- 5055 multiletter control sequences out of 15000+200000
+ 5067 multiletter control sequences out of 15000+200000
  8808 words of font info for 31 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,9n,25p,1508b,201s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -326,9 +360,9 @@ Here is how much of TeX's memory you used:
 public/amsfonts/cm/cmbx12.pfb><C:/Users/Jason/AppData/Local/Programs/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Jason/AppData/Local/Program
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on SRS.pdf (24 pages, 162750 bytes).
+Output written on SRS.pdf (26 pages, 206087 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
+ 109 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

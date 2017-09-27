@@ -33,7 +33,7 @@ The document will be broken up into multiple sections. As already mentioned befo
 \subsection{Stakeholders}
 The following people have an interest in this project:
 \subsubsection{Users}
-The future users of this project, being students that require transport within service areas, will be keen to use this software as transport is still a major issue in South africa. This often leads to people not getting to their destination on time, a key factor for many. Hence these users will be keen to know how this software turns out.
+The future users of this project, being students that require transport within service areas, will be keen to use this software as transport is still a major issue in South Africa. This often leads to people not getting to their destination on time, a key factor for many. Hence these users will be keen to know how this software turns out.
 \subsubsection{Developers}
 Apart from the developers having to do this for their job, they too will be interested in making sure this project flows and is completed by the end of it, as it will further develop their skills as well as could help them further once the project is completed. 
 \subsubsection{Project Management}
@@ -122,8 +122,19 @@ Once the driver has been allocated, a notification will be sent firstly to the d
 The approach taken here is to achieve as minimalistic approach, storing the least amount of information possible. Hence we just have 3 tables, one for the customer and their details, one for the driver and their details and a bridge entity to match the two together. To simplify things, we decided that if a driver is part of a rank, their home address details become the ranks address. We also made it that the customers do not have to each time log in, they just call and create a new customer each time for convenience.
 
 \subsection{Server Design}
+\subsubsection{Class Diagram}
 \includegraphics[scale=0.5]{Server_UML}
 When designing the server, we as a group decided that it would be best to make sure efficiency was our main priority, especially due to the networking specifics required. Hence we went for a minimalist approach and kept all networking as simple as possible. We also made use of threads to improve response time when multiple queries came in at once, as each thread could handle a request at the same time. Further, we decided to separate the code into multiple classes and methods to make the code more understandable and easier to read, as well as make sure that there is upgradability and maintainability with the code, for further development. The image above describes the class diagram that links all the classes together.
+\newpage
+\subsubsection{Sequence Diagrams}
+\includegraphics[scale=0.5]{CreateSequenceDiagram}
+The above diagram shows the general procedure that is followed when either a new customer or driver is created. The steps that the applications take are outlined in this diagram above.\\
+\includegraphics[scale=0.5]{GetDataSequenceDiagram}
+Similarly, the above diagram shows how the front end apps query the server for any data they need. They again, follow the same general strategy as outlined in the sequence diagram.
+
+\subsubsection{State Machine Transition Diagram}
+\includegraphics[scale=0.5]{statemachinediagram}
+\\The above diagram shows how the state of a drive progresses as events occur. When the customer is newly created from the call center, they are ``assigned'' to a driver, but the driver does not know this, until the app refreshes with the server. Once the driver has the refreshed information, i.e. the drive has been transferred to a driver, then the drive is ``InProgress''. Finally, once the drive is ``completed'', it is marked as so, and archived.
 \newpage
 \section{SCRUM Documentation}
 Note: Each sprint has a length of 1 week.
@@ -217,18 +228,21 @@ To run the database, follow the similar setup as for the desktop application, i.
 \item Stakeholders by Jason (Section 1.6)
 \item Team Management by Jason (Section 2.1.1)
 \item Team Meetings by Jason (Section 2.1.2)
+\item Responsibilities of team by Jason (Section 2.1.3)
 \item System Architecture Analysis by Jason (Section 2.2)
 \item Analysis of Front-end System (Mobile App) by Rashad (Section 2.3)
 \item Analysis of Front-End System (Desktop App) by Robert (Section 2.4)
 \item Analysis of Back-End System by Robert (Section 2.5)
 \item Additional Software APIs Required by Amine (Section 2.6)
 \item Analysis of Inputs and outputs by whole team (Section 2.7)
-\end{description}
-\subsection{Task and Responsibilities Dedications}
-\begin{description}
-\setlength\itemsep{0em}
 \item Front-End Mobile App to be handled by Amine and Rashad (Section 3.1)
 \item Front-End Desktop Application to be handled by Robert (Section 3.2)
 \item Back-End Server to be handled by Jason (Section 3.3)
+\item Database Design by Jason (Section 4.1)
+\item Server Design by Jason (Section 4.2)
+\item SCRUM Documentation by Jason
+\item Evaluation, compiling and running Desktop Application by Robert (Section 6.1.1)
+\item Evaluation, compiling and running Server and Database by Jason (Section 6.1.2)
+
 \end{description}
 \end{document}
