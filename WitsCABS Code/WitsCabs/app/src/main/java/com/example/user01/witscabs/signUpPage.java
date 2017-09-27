@@ -1,15 +1,25 @@
 package com.example.user01.witscabs;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 public class signUpPage extends Activity {
     String name, lastName, phone, homeNumber, address, area, carReg, carMake, carColour;
@@ -19,7 +29,7 @@ public class signUpPage extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signuplayout);
     }
-    public void getSignUpDetails(View v){
+    public void getSignUpDetails(final View v){
         firstNameET = (EditText)findViewById(R.id.firstNameE);
         name = firstNameET.getText().toString();
         lastNameET = (EditText)findViewById(R.id.lastNameE);
@@ -36,8 +46,31 @@ public class signUpPage extends Activity {
         carMake = carMakeET.getText().toString();
         carColourET = (EditText)findViewById(R.id.carColourE);
         carColour = carColourET.getText().toString();
- Toast.makeText(signUpPage.this,"before serrver",Toast.LENGTH_LONG);
 
+        HttpClient httpclient = new DefaultHttpClient();
+        HttpPost httppost = new HttpPost("http://<ip address>:3000");
+
+            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+            nameValuePairs.add(new BasicNameValuePair("firstName", name));
+            nameValuePairs.add(new BasicNameValuePair("lastName", lastName));
+            nameValuePairs.add(new BasicNameValuePair("phone", phone));
+            nameValuePairs.add(new BasicNameValuePair("homeNumber", homeNumber));
+            nameValuePairs.add(new BasicNameValuePair("address", address));
+            nameValuePairs.add(new BasicNameValuePair("carReg", carReg));
+            nameValuePairs.add(new BasicNameValuePair("carMake", carMake));
+            nameValuePairs.add(new BasicNameValuePair("carColour", carColour));
+            AsyncHttpPost asyncHttpPost = new AsyncHttpPost(nameValuePairs, new AsyncHandler() {
+                @Override
+                public void handleResponse(String response) {
+                    response=response.trim();
+                    if(response.equals("success")){
+                        Toast.makeText(getApplicationContext(),"Registered",Toast.LENGTH_SHORT).show();
+                    }else Toast.makeText(getApplicationContext(),"Not Registered",Toast.LENGTH_SHORT).show();
+                }
+            });
+            asyncHttpPost.execute("http://");
+
+/*        Toast.makeText(signUpPage.this,"before serrver",Toast.LENGTH_LONG);
         Socket client; String feedback;
         DataOutputStream out;
         BufferedReader read;
@@ -51,6 +84,6 @@ public class signUpPage extends Activity {
             feedback=read.readLine();
             if(feedback.equals("SUCCESS")) System.out.println("change to main activity");
             else Toast.makeText(signUpPage.this,"Please try again, request failed",Toast.LENGTH_LONG).show();
-        }catch(IOException e){System.out.println(e);}
+        }catch(IOException e){System.out.println(e);}*/
     }
 }
