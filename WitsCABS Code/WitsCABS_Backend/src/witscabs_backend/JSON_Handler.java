@@ -48,6 +48,35 @@ public class JSON_Handler
         }
     }
     
+    //used to construct a JSON String which is used for multi variables.
+    public static String constructJSONString(String[] varNames, String[] varTypes, String[] values)
+    {
+        String temp = "{";
+        for(int count = 0; count < varNames.length-1 ; count++)
+        {
+            temp+= "\"" + varNames[count] + "\":";
+            if(varTypes[count].equalsIgnoreCase("String"))
+            {
+                temp+= "\"" + values[count] + "\",";
+            }
+            else
+            {
+                temp+= values[count] + ",";
+            }
+        }
+        temp+= temp+= "\"" + varNames[varNames.length] + "\":";
+            if(varTypes[varNames.length].equalsIgnoreCase("String"))
+            {
+                temp+= "\"" + values[varNames.length] + "\"";
+            }
+            else
+            {
+                temp+= values[varNames.length];
+            }
+            temp+= "}";
+            return temp;
+    }
+    
     //returns value based on string variable created
     public String getValueFromVar(String in)
     {
