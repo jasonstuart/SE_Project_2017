@@ -20,7 +20,6 @@ WITS students often require transport to get them from place to place, it could 
 \subsection{Project Objective}
 The objective of this project is not only to learn and make use of specific design procedures and team management skills, but also to further our skills in development of software using specific techniques that will be used in industry. Further, the objective is to have a working prototype of the WitsCABS project by the end, using these skills so that we are more comfortable when going into industry.
 \newpage
-
 \subsection{Scope}
 Our core objective is to design, develop and implement a software system which will be used to manage a fleet of taxi-cabs for a company (as per the project brief). Our company, WitsCABS Company, will be independently run and will employ our own staff/drivers. Vehicles however may either be owned by WitsCABS Company or by the drivers. The service will run based on service zones within the city of operation i.e. the city will be split into various sectors which will allow for more efficient ride time. Each driver will be equipped with a smart-phone embedded with GPS, maps and a navigational tracking system. All vehicles being dispatched will be on instruction from the 24-hour manned Dispatching Control Centre (DCC) which will be in direct contact with clients via calls to the centre.
 \\\\
@@ -30,6 +29,7 @@ The Back-end of our system will make use of Java as well as JSON. This will cons
 \pagebreak
 \subsection{Overview}
 The document will be broken up into multiple sections. As already mentioned before in the document, we have given an introduction as to why this document has been typed up, the objectives to be met, and the problem statement that describes the problem at hand. The scope of what the project is all about and a basic description of the required features needed to be implemented is also discussed above. We also discuss the relevant stakeholders next. In section 2, an analysis of how the project will be conducted is discussed. This includes a discussion of system architecture types, software required for the project, as well as how the team will be managed and handled during development. In section 3, a list of formal required functions will be provided for both front-end software as well as the back-end. Section 4 will then go into the design documentation, such as Database design, e.t.c. Section 5 will then contain relevant documentation related to Sprint Planning as well as Sprint Retrospectives for the SCRUM Methodology. Then The document will discuss how to evaluate the software for the project owner's use in Section 6. Finally a list of responsibilities and credentials is provided in section 7.
+\newpage
 \subsection{Stakeholders}
 The following people have an interest in this project:
 \subsubsection{Users}
@@ -57,16 +57,20 @@ The team will conduct the project as follows:
 \end{itemize}
 \subsubsection{Responsibilities of Team}
 Our current student assignment is as follows. Rashad and Amine will handle the mobile app. Robert will handle the frontend. Jason will handle the backend. As the project moves forward, this can change, depending on who needs what help at each time. Each member is responsible for providing constant communication and feedback on their portions as well as suggestions on others work. Jason will schedule any meetings required to advance the project in any way.
+\newpage
 \subsection{System Architecture Analysis}
 After thorough analysis of existing architectures and analyzing the functional requirements listed later in this document, the team has decided to make use of a 2 part Client - 1 part Server architecture. The first client software will be the mobile app that allows the drivers of the WITSCABS service to receive communication from the system as to who the driver should pick up, etc. \\\\The other client software will be run on a desktop in the call center, so that as a client calls in, the operator can input all the details necessary for the system to compute the best driver to use. The server will be the bridge between these two client software services, where the server determines the best driver for the job that arrives and pushes the required information through to the driver on his mobile app.\\\\ All this communication will be facilitated through an Internet connection, so when designing the system, it must take into consideration that an internet connection might not always be available for the drivers. There is no need to have any further server or client interfaces thereafter.
+\newpage
 \subsection{Analysis of Front-end System (Mobile App)}
 We have decided to make use of an android application as the primary user-accessible interface for our project. The reason for choosing a mobile application is quite obvious in our case as the drivers who will be using the application have to be in their vehicle at the time of using the application as well as moving in the vehicle while using it. This automatically squashes any idea of a desktop application or web based application as the accessibility would be a major issue. The possible downside to this would be that each driver requires a cellphone/tablet which will support the software WITSCabs as well as a mobile data connection. \\\\
 The call centre will be using a desktop application in conjunction with the android application although the users will not be registered to the database but instead will have access to the database in a read-only capacity. This will allow the call-centre to access client details as well as drivers details which will in turn allow them to run statistics checks as well as be prepared in the case of an emergency. For this, it is clearly most beneficial to use a desktop application preferably with an internet connection as immediate run-time statistics as well as driver locations etc. are imperative.\\\\
 For this purpose we have chosen to develop our software as an android application as it is the most common operating system friendly platform for a mobile application. Linking with this, it has been decided as a group that a predominant bulk of the code used should be Java as it is the most commonly used programming language for Android applications as well as the most familiar between each member of the group. Adding to this, we have decided to use IntelliJ idea as an IDE for our app development as it is popular, free to students and boasts many high-end features which will benefit the development of our project.
+\newpage
 \subsection{Analysis of Front-End System (Desktop App)}
 When a user wants to get a lift they have to call in and speak to a call center agent. The call center agent will then get the relevant information from the user and capture it in a desktop application. This application will communicate with a server which will capture the information in a database. The server then sends a notification to the mobile application so that a driver can pick up the user.\\\\
 We have chosen to use a desktop application over a web application. The main reason for this is responsiveness. Web applications can become unresponsive if the internet connection is heavily used or if there are connectivity issues such as a damaged line, desktop applications have a more reliable response time as response time will be limited by the CPU. Desktop applications are also more secure than web applications which will be important as we store user information on a database.\\\\
 The language chosen to develop the desktop app is Java. Java is platform independent so it will run no matter what operating system is on the call center computers. Java is an easy to learn object oriented language, this helps us to create reusable code. Another benefit of Java being easy to learn is its popularity, this means that should any problems arise it won't be difficult to find someone to fix these problems.
+\newpage
 \subsection{Analysis of Back-End System}
 The back-end will consist of two parts. The server application and the database.
 Our database will be developed using the DBMS MySQL. MySQL is a very commonly used and simple DBMS so any issues with the database can be dealt with quickly and easily. As MySQL is very easy it only requires basic statements in order to interact with the database. We have also chosen MySQL as it is free which helps reduce the cost needed to develop the full system. MySQL is also able to handle large amounts of data which is well suited for a popular application. The DBMS also includes options to add security which can help protect the data in the database from intruders.
@@ -136,8 +140,12 @@ Similarly, the above diagram shows how the front end apps query the server for a
 \includegraphics[scale=0.5]{statemachinediagram}
 \\The above diagram shows how the state of a drive progresses as events occur. When the customer is newly created from the call center, they are ``assigned'' to a driver, but the driver does not know this, until the app refreshes with the server. Once the driver has the refreshed information, i.e. the drive has been transferred to a driver, then the drive is ``InProgress''. Finally, once the drive is ``completed'', it is marked as so, and archived.
 \newpage
+\subsection{Call Center Design}
+\includegraphics[scale=0.5]{CallCenterSequence}\\
+The diagram shows the process that occurs when a user calls the call-center and the call-center agent captures their details on the form. The steps that need to occur are outlined above.
+\newpage
 \section{SCRUM Documentation}
-Note: Each sprint has a length of 1 week.
+Note: Each standard sprint we implemented has a length of 1 week. It should also be noted that each day at 19:00 the team would do a daily stand-up meeting via Google Hangouts wherein each member would describe what they have done, the problems they faced, as well as get any answers related to their concerns if they needed to do so.
 \subsection{Sprint 1: 7 September 2017}
 
 \subsubsection{Sprint Planning Documentation}
@@ -155,7 +163,7 @@ Analyze Google API for use & Jason \\ \hline
 
 \subsubsection{Sprint Retrospective}
 \underline{Overview}\\
-All Tasks Completed Successfully Except for the Android Screens. Amine and Rashad encountered a strange bug that would not allow them to compile their code, hence they have been held up and have not met the deadline. Their team has gone to get assistance with the bug from staff who are knowledgeable with android development. \\ Robert Successfully completed the Call Center Screens within 2 days, but the holdup was implementing the networking code as we had issues with the proxy blocking our connection. We found a workaround and now have a working connection. \\ Jason installed and created the mysql database as discussed in the planning stages of the project. He also implemented the server networking code and Threading code as well. He also helped Robert connect the applications together. He further went on to analyze the google api and even implemented it into the server code ahead of schedule.\\\
+All Tasks Completed Successfully Except for the Android Screens. Amine and Rashad encountered a strange bug that would not allow them to compile their code, hence they have been held up and have not met the deadline. Their team has gone to get assistance with the bug from staff who are knowledgeable with android development. \\ Robert Successfully completed the Call Center Screens within 2 days, but the holdup was implementing the networking code as we had issues with the proxy blocking our connection. We found a workaround and now have a working connection. \\ Jason installed and created the mysql database as discussed in the planning stages of the project. He also implemented the server networking code and Threading code as well. He also helped Robert connect the applications together. He further went on to analyze the google api and even implemented it into the server code ahead of schedule.\\\\\\\\
 \underline{Negatives}\\
 Currently the android team is behind schedule due to the bug. Hence it is critical that they can recover from this situation and catch up. This means they will have to work extra hard this next week. Also the networking methodology was not clearly described by Jason until later on in the week, as he was still implementing the code, hence the networking of Robert's code could not be implemented yet. \\\
 \underline{Positives}\\
@@ -182,10 +190,10 @@ Begin basic testing of server functionality and find bugs & Jason \\ \hline
 \subsubsection{Sprint Retrospective}
 \underline{Overview}\\
 This sprint went much better than the previous one. While the android team is still behind, they feel that they can complete the job by the end of sprint 3. They managed to add the required functionality and implement the Google maps api into the app. They also managed to complete the android screens. They now just need to add the networking code. Robert finished commenting and tidying up the code for the call-center app. Jason did bug testing excluding the android side of things on the server. \\
-\underline{Positives}\\
-Our group has begun to work more with each other and less on their own, speeding up the development process. Furthermore, it has become more clear to each member exactly what is required of them. Every member is motivated and positive they can finish all content in the next sprint.\\
 \underline{Negatives}\\
-Once again, the android team encountered some strange bugs with the IDE while developing the app, this slowed them down and in the end they could not finish their networking portion of the code. They are however more than ever determined to sidestep these problems to the best of their ability and make sure that all can be done as quickly and efficiently as possible.
+Once again, the android team encountered some strange bugs with the IDE while developing the app, this slowed them down and in the end they could not finish their networking portion of the code. They are however more than ever determined to sidestep these problems to the best of their ability and make sure that all can be done as quickly and efficiently as possible.\\
+\underline{Positives}\\
+Our group has begun to work more with each other and less on their own, speeding up the development process. Furthermore, it has become more clear to each member exactly what is required of them. Every member is motivated and positive they can finish all content in the next sprint.
 
 \subsection{Sprint 3: 22 September 2017}
 \subsubsection{Sprint Planning Document}
@@ -199,7 +207,15 @@ Begin overall test cases and find bugs in all software & Whole Team \\ \hline
 \end{tabular}
 
 \subsubsection{Sprint Retrospective}
-Todo 29 September 2017
+\underline{Overview}\\
+The team is pleased to say that the networking code between the android app and server now successfully runs for some functions, meaning that the app is now in a demonstrable state. This took a lot of effort to program as we were constantly facing new challenges, but through perseverance, a strong quality of the team, it has been done. The main focus of this week however was bug testing, which the team did an admirable job finding these small but significant bugs in the software code. Testing also occurred which was a huge success.\\
+\underline{Negatives}\\
+The team could not identify any Negative aspects relating to this week. All went smoothly.\\
+\underline{Positives}\\
+The team has been putting in extra hours behind the scenes to make sure that the project deadline is met, even though these hours are not officially scholar hours. This shows that the team is dedicated and motivated to give their all in making sure this project completes successfully. 
+
+\subsection{Mini Sprint 4: 29 September 2017 - 1 October 2017}
+During this time period, a major focus was made on neatening the document up into a final document that is legible and understandable. It should be noted that the document was worked on at all points during the development stages and evidence of this is provided on Github in the repository by analyzing commits and their contents.
 
 \newpage
 \section{Evaluation}
@@ -208,10 +224,10 @@ Todo 29 September 2017
 The Desktop Application to be used in the call center will be a Java program (as previously mentioned). So in order to compile it an IDE that supports Java will be required eg Eclipse or Netbeans. For the sake of this document it is assumed that Netbeans will be used. Further it is required that you have the latest JDK and JRE software installed from Oracle.\\
 Netbeans has a built in compiler that is easy to use. On the ribbon at the top of screen there are two hammers, one hammer has a brush. These hammers are used to call ``build'' and ``clean and build''. Clicking either one of them will compile the code. The difference between the two is that clean and build completely recompiles the code, deleting former versions.\\
 After compiling a .jar file should be present in the build folder of the Java project. This .jar  file can be transferred to computers in the call center and will allow the application to run without the need for an IDE.It will require the use of the command prompt.\\To run the code using an IDE there are multiple options, you can right click the main class and select run file, or click the green play button in the top ribbon. Either of these options will run the code if the code has been compiled or compile and then run the code. To run from the command line without the IDE installed, navigate to the file in the command prompt and then type: java -jar CallCenter.jar
-
+\newpage
 \subsubsection{Server}
-Similarly to the Call Center Desktop Application, the server has also been constructed using Java as the programming language in order to more easily maintain compatibility with all the other programs. So in order to compile the code, you can follow a similar approach to 4.1.1 for the desktop application. Note it is required that you have installed the latest java JDK as well as JRE software. There is however an extra step required to setup the database. One needs to install mySQL and install it to the system using the default settings. When setting up user details, set the root password to ``jason''. Keep the port number the default. Furthermore, make sure to restore the current database from the repository code to the server using mysql -u root -p WitsCABS < WitsCABS.sql where this command is run in the same directory as the sql backup. Finally, to make sure that you can receive connections from client programs, make sure to give them your current ip address to input into their programs. 
-To run the database, follow the similar setup as for the desktop application, i.e. navigate to the .jar file in the command prompt and then type: java -jar WitsCABS\_Backend.jar
+Similarly to the Call Center Desktop Application, the server has also been constructed using Java as the programming language in order to more easily maintain compatibility with all the other programs. So in order to compile the code, you can follow a similar approach to 6.1.1 for the desktop application. Note it is required that you have installed the latest java JDK as well as JRE software. There is however an extra step required to setup the database. One needs to install mySQL and install it to the system using the default settings. When setting up user details, set the root password to ``jason''. Keep the port number the default. Furthermore, make sure to restore the current database from the repository code to the server using mysql -u root -p WitsCABS < WitsCABS.sql where this command is run in the same directory as the sql backup. Finally, to make sure that you can receive connections from client programs, make sure to give them your current computer ip address to input into their program code for testing. Note: it is critical to be on a network other than the Wits network as the proxy service and network policies interfere with the correct running of the server.
+To run the server, follow the similar setup as for the desktop application, i.e. navigate to the .jar file in the command prompt using cd and then type: java -jar WitsCABS\_Backend.jar
 
 
 \pagebreak
