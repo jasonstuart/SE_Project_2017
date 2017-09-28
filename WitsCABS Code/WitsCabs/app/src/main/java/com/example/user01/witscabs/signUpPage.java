@@ -22,8 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class signUpPage extends Activity {
-    String Home_Area, First_Name, Last_Name, Phone_Number, Home_StreetName, Car_Reg, Home_Number, Car_Make, Car_Colour;
-    EditText firstNameET, lastNameET, phoneET, homePhoneET, addressET, carRegET, carMakeET, carColourET;
+    String Home_Area, First_Name, Last_Name, Phone_Number, Home_StreetName, Car_Reg, Home_Number, Car_Make, Car_Colour, Driver_Password;
+    EditText passwordET, firstNameET, lastNameET, phoneET, homePhoneET, addressET, carRegET, carMakeET, carColourET;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,15 +46,37 @@ public class signUpPage extends Activity {
         Car_Make = carMakeET.getText().toString();
         carColourET = (EditText)findViewById(R.id.carColourE);
         Car_Colour = carColourET.getText().toString();
+        Home_Area = "Sandton";
+        //passwordET = (EditText)findViewById(R.id.passwordE);
+       // Driver_Password = passwordET.getText().toString();
+        Driver_Password = "password";
+       /* RadioGroup radioGroup=(RadioGroup) findViewById(R.id.radioGroup);
+        if(radioGroup.getCheckedRadioButtonId()!=-1){
+            int id=radioGroup.getCheckedRadioButtonId();
+            View radioButton=radioGroup.findViewById(id);
+            int radioId=radioGroup.indexOfChild(radioButton);
+            RadioButton radioButton1=(RadioButton) radioGroup.getChildAt(radioId);
+            area=(String) radioButton1.
+        }*/
 
-        String[] varNames = {"First_Name", "Last_Name", "Phone_Number", "Home_Number", "Home_StreetName", "Car_Reg", "Car_Make", "Car_Colour", "Home_Area"};
-        String[] varTypes = {"String","String","String","int","String","String","String","String","String"};
-        String[] varActualVariables = new String[]{First_Name, Last_Name, Phone_Number, Home_Number, Home_StreetName, Car_Reg, Car_Make, Car_Colour, Home_Area};
+        String[] varNames = {"First_Name", "Last_Name", "Phone_Number", "Car_Reg", "Car_Make", "Car_Colour", "Home_Number", "Home_StreetName", "Home_Area", "Driver_Password"};
+        String[] varTypes = {"String","String","String","String","String","String","int", "String", "String", "String"};
+        String[] varActualVariables = {First_Name.toString(), Last_Name.toString(), Phone_Number.toString(), Car_Reg.toString(), Car_Make.toString(), Car_Colour.toString(), Home_Number.toString(), Home_StreetName.toString(), Home_Area.toString(), Driver_Password.toString()};
 
         String json = JSON_Handler.constructJSONString(varNames, varTypes, varActualVariables);
+        AsyncClassSignUp asyncClassSignUp=new AsyncClassSignUp(json);
+        asyncClassSignUp.execute(json);
 
+        startActivity(new Intent(getApplicationContext(),loginPage.class));
 
-        AsyncHandler asyncHandler=new AsyncHandler() {
+//        String boy=asyncClassSignUp.feedback;
+   /*     if(boy.equals("OK"))
+            Toast.makeText(getApplicationContext(),"Signup work",Toast.LENGTH_SHORT).show();
+//            startActivity(new Intent(getApplicationContext(),loginPage.class));
+        else
+            Toast.makeText(getApplicationContext(),"Signup failed",Toast.LENGTH_SHORT).show();
+*/
+/*        AsyncHandler asyncHandler= new AsyncHandler() {
             @Override
             public void handleResponse(String response) {
                 if(response.equals("OK"))
@@ -63,6 +85,9 @@ public class signUpPage extends Activity {
                     Toast.makeText(getApplicationContext(),"Signup failed",Toast.LENGTH_SHORT).show();
             }
         };
+        asyncHandler.handleResponse(asyncClassSignUp.feedback);*/
+
+  //      System.out.println(json);
 
         /*    List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
             nameValuePairs.add(new BasicNameValuePair("firstName", name));
@@ -70,7 +95,7 @@ public class signUpPage extends Activity {
             nameValuePairs.add(new BasicNameValuePair("phone", phone));
             nameValuePairs.add(new BasicNameValuePair("homeNumber", homeNumber));
             nameValuePairs.add(new BasicNameValuePair("address", address));
-            nameValuePairs.add(new BasicNameValuePair("carReg", carReg));
+            nameValuePairs.add(new BasicNameValuePair("carReg", carReg))99999999999999999999999999999999;
             nameValuePairs.add(new BasicNameValuePair("carMake", carMake));
             nameValuePairs.add(new BasicNameValuePair("carColour", carColour));
             asyncHttpPost.execute("http://10.30.40.41");

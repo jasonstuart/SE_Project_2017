@@ -13,17 +13,30 @@ import java.net.Socket;
  */
 
 public class AsyncClassSignUp extends AsyncTask<String,Void,String> {
+    String jsonString, feedback;
+    AsyncHandler asyncHandler;
+    public AsyncClassSignUp(String s){
+        this.jsonString=s;
+    }
     @Override
     protected String doInBackground(String... params) {
         Socket client;
         DataOutputStream out;
         BufferedReader read;
         try {
-            client=new Socket("10.30.1.170",9987);
+            client=new Socket("192.168.8.100",9987);
             read=new BufferedReader(new InputStreamReader(client.getInputStream()));
             out=new DataOutputStream(client.getOutputStream());
-
-        }catch(IOException e){System.out.println(e);}
-        return "";
+            out.writeBytes("newDriver\n");
+            read.readLine();
+            out.writeBytes(jsonString+"\n");
+            feedback=read.readLine();
+            out.close(); read.close(); client.close();
+        }catch(IOException e){feedback="failed to try";}
+        return feedback;
     }
+/*    @Override
+    protected void onPostExecute(String feedback) {
+        asyncHandler.handleResponse((String) feedback);
+    }*/
 }
