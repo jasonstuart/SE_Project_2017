@@ -44,7 +44,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (1,'Jack','Tall Male, with bright blue shirt','0213459678',21,'Long Street','Auckland Park',1,'Jackson Street','Sandton');
+INSERT INTO `customer` VALUES (1,'Jack Sethington','Tall, White Male, blue Shirt','0923194567',43,'5th Avenue','Illovo',9,'Atherstone Road','Illovo');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -72,6 +72,7 @@ CREATE TABLE `drive` (
 
 LOCK TABLES `drive` WRITE;
 /*!40000 ALTER TABLE `drive` DISABLE KEYS */;
+INSERT INTO `drive` VALUES (4,1,'Assigned');
 /*!40000 ALTER TABLE `drive` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,7 +99,7 @@ CREATE TABLE `driver` (
   `Driver_StatusTime` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`Driver_ID`),
   UNIQUE KEY `Driver_ID` (`Driver_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,7 +108,7 @@ CREATE TABLE `driver` (
 
 LOCK TABLES `driver` WRITE;
 /*!40000 ALTER TABLE `driver` DISABLE KEYS */;
-INSERT INTO `driver` VALUES (1,'Jason','Stuart','0923485693','KJ23WEGP','Honda Civic','Silver',11,'Truro Road','Alberton',0,NULL,NULL);
+INSERT INTO `driver` VALUES (1,'Jason','Stuart','0923485693','KJ23WEGP','Honda Civic','Silver',1,'Summit Road','Sandton',1,'1234','2017-09-28 09:27:50'),(2,'Amine','Boukrout','0543212345','JD23KWGP','Hyundai i10','Light Blue',17,'Tyrwhitt Avenue','Rosebank',1,'5678','2017-09-28 16:21:36'),(3,'Robert','Basson','0549834967','JD24LWGP','Nissan Leaf','Light Green',3,'Streatley Avenue','Auckland Park',1,'password','2017-09-28 16:25:22'),(4,'Rashad','Akoodie','0540098234','DJ00KLGP','Hyundai H1','White',48,'2nd Avenue','Illovo',1,'rashad','2017-09-28 16:29:35');
 /*!40000 ALTER TABLE `driver` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -120,4 +121,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-13 12:01:42
+-- Dump completed on 2017-09-28 16:51:43
