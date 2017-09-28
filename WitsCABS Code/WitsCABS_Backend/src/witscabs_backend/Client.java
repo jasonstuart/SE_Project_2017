@@ -188,10 +188,11 @@ public class Client extends Thread
         out.writeBytes("OK\n");
 
         //now assign customer to an available driver in database.
-        String rec = "SELECT Driver_ID, Home_Number, Home_StreetName, Home_Area, Rank_ID FROM Driver WHERE (Driver_Status = 1 "
-                + "AND Home_Area =" + temp.getValueFromVar("startsuburb")+") ORDER BY Driver_StatusTime;";
+        String rec = "SELECT Driver_ID, Home_Number, Home_StreetName, Home_Area FROM Driver WHERE (Driver_Status = 1 "
+                + "AND Home_Area =\"" + temp.getValueFromVar("startsuburb")+"\") ORDER BY Driver_StatusTime;";
         System.out.println(rec);
-        ResultSet drivers = WitsCABS_Backend.sendSQLQuery(sql);
+        ResultSet drivers = WitsCABS_Backend.sendSQLQuery(rec);
+        System.out.println(drivers);
 
         //run the assign driver algorithm to find closest driver.
         int driver = assignDriver(drivers, temp.getValueFromVar("startnumber"), temp.getValueFromVar("startstreet"), temp.getValueFromVar("startsuburb"));

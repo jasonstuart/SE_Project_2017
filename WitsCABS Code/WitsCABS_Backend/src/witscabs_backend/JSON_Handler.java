@@ -64,14 +64,14 @@ public class JSON_Handler
                 temp+= values[count] + ",";
             }
         }
-        temp+= temp+= "\"" + varNames[varNames.length] + "\":";
-            if(varTypes[varNames.length].equalsIgnoreCase("String"))
+        temp+= temp+= "\"" + varNames[varNames.length-1] + "\":";
+            if(varTypes[varNames.length-1].equalsIgnoreCase("String"))
             {
-                temp+= "\"" + values[varNames.length] + "\"";
+                temp+= "\"" + values[varNames.length-1] + "\"";
             }
             else
             {
-                temp+= values[varNames.length];
+                temp+= values[varNames.length-1];
             }
             temp+= "}";
             return temp;
