@@ -64,17 +64,17 @@ public class JSON_Handler
                 temp+= values[count] + ",";
             }
         }
-        temp+= temp+= "\"" + varNames[varNames.length-1] + "\":";
-            if(varTypes[varNames.length-1].equalsIgnoreCase("String"))
-            {
-                temp+= "\"" + values[varNames.length-1] + "\"";
-            }
-            else
-            {
-                temp+= values[varNames.length-1];
-            }
-            temp+= "}";
-            return temp;
+        temp+= "\"" + varNames[varNames.length-1] + "\":";
+        if(varTypes[varNames.length-1].equalsIgnoreCase("String"))
+        {
+            temp+= "\"" + values[varNames.length-1] + "\"";
+        }
+        else
+        {
+            temp+= values[varNames.length-1];
+        }
+        temp+= "}";
+        return temp;
     }
     
     //returns value based on string variable created
