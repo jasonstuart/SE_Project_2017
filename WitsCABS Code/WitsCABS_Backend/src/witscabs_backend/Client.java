@@ -164,6 +164,7 @@ public class Client extends Thread
     {
         //new driver being created, so read JSON file with all details and insert into the database for use lated
         System.out.println("newDriver called");
+        out.writeBytes("OK\n");
         String JSON = in.readLine();
         JSON_Handler temp = new JSON_Handler(JSON);
         String sql = "INSERT INTO Driver(First_Name, Last_Name,Phone_Number, Car_Registration, Car_Make, Car_Colour,"
@@ -195,12 +196,18 @@ public class Client extends Thread
         System.out.println(drivers);
 
         //run the assign driver algorithm to find closest driver.
-        int driver = assignDriver(drivers, temp.getValueFromVar("startnumber"), temp.getValueFromVar("startstreet"), temp.getValueFromVar("startsuburb"));
-
+        int driver = assignDriver(drivers, temp.getValueFromVar("startnum"), temp.getValueFromVar("startstreet"), temp.getValueFromVar("startsuburb"));
+        System.out.println(driver);
 
         //insert the drive entry to match driver to customer
+        String cust = "SELECT Customer_ID FROM Customer WHERE Customer_Name =\'" + temp.getValueFromVar("name") + "\';";
+        System.out.println(cust);
+        ResultSet customer_ID = WitsCABS_Backend.sendSQLQuery(cust);
+        customer_ID.next();
+        System.out.println(customer_ID.getFetchSize());
         String update = "INSERT INTO Drive(Driver_ID, Customer_ID)"
-                + "VALUES("+driver+"," + WitsCABS_Backend.sendSQLQuery("SELECT Customer_ID FROM Customer WHERE Customer_Name =" + temp.getValueFromVar("name")+";").getInt("Customer_ID") + ");";
+                + "VALUES("+driver+"," + customer_ID.getInt(1) + ");";
+        System.out.println(update);
         WitsCABS_Backend.sendSQLQuery(update);
     }
     
@@ -212,10 +219,14 @@ public class Client extends Thread
         while(r.next()) //while still more drivers...
         {
             //get distance from google api and if better, assign driver temporarily.
-            double d = getDistance(r.getString("Home_Number"), r.getString("Home_Street"), r.getString("Home_Suburb"), num, street, suburb);
+            String hn = r.getString("Home_Number");
+            String hs = r.getString("Home_StreetName");
+            String hss = r.getString("Home_Area");
+            double d = getDistance(hn,hs,hss, num, street, suburb);
             if(d < bestDistance)
             {
                 bestDriver = r.getInt("Driver_ID");
+                bestDistance = d;
             }
         }
         
