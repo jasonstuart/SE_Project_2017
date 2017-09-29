@@ -140,9 +140,74 @@ Similarly, the above diagram shows how the front end apps query the server for a
 \includegraphics[scale=0.5]{statemachinediagram}
 \\The above diagram shows how the state of a drive progresses as events occur. When the customer is newly created from the call center, they are ``assigned'' to a driver, but the driver does not know this, until the app refreshes with the server. Once the driver has the refreshed information, i.e. the drive has been transferred to a driver, then the drive is ``InProgress''. Finally, once the drive is ``completed'', it is marked as so, and archived.
 \newpage
+\subsubsection{Driver Assignment Algorithm}
+Apart from the previously mentioned and discussed design diagrams, it is critical to discuss the design of the algorithm that chooses which driver to dispatch to each customer. The server gets a resultSet from the database of all drivers ready for a drive in the service zone related to the customers starting position. It then, using the distanceMatrix API provided by google calculates which driver will get to the customer first in terms of time taken (including traffic delays e.t.c.) and assigns that driver to go fetch the customer. If the closest drivers are located at the Service Rank, the algorithm picks the driver that marked their status as available first at the service rank. It also then marks the driver status as unavailable and the server then waits for the driver to get the customer details.
+\newpage
 \subsection{Call Center Design}
 \includegraphics[scale=0.5]{CallCenterSequence}\\
 The diagram shows the process that occurs when a user calls the call-center and the call-center agent captures their details on the form. The steps that need to occur are outlined above.
+\newpage
+\subsection{Android App Design}
+\includegraphics[scale=0.5]{AndroidAppUML}\\
+As any other android applications, the application consists of activities which are standalone and
+completely independent from one another. (To clarify terminology, an activity is a screen that displays on
+the android device in use.) The application also consists of several auxiliary classes which assist in the
+functionalities of the main activities (i.e. the activities).
+The WitsCabs android application has five activities in total, wherein three out of the five activities are the
+core activities of the application. Each of the five activities are standalone as stated previously, and thus
+each of the five activities constitute to different and specific functionalities of the application. Each of
+the activities are linked to a single .xml file which helps to display the visual aspect of the activity (the
+GUI) on the device.\\The different (main) activities along with their functionalities are described below:
+\begin{itemize}
+\item StartUpActivity: this activity is linked to the startupactivity.xml. This specific activity is launched
+when the application is launched. The StartUpActivity displays an image along with text that
+reads ``Welcome to WitsCabs!'', and automatically times out after 7 seconds to start up the next
+activity which is the login page for the application.
+\item loginPage: this activity is linked to the loginlayout.xml and is launched automatically after the
+StartUpActivity. This activity allows the user (i.e. the driver) to login to the application by
+inserting his/her username and password in the provided text boxes followed by clicking the
+login button, and also provides a button which the user can click to register as a driver at
+WitsCabs. Depending on which button is clicked the application will lead to a different activity. If
+the login button is clicked, the application will then lead to the dashboard of the application and
+if the register button is clicked, the application will lead to the register activity.
+\item signUpPage: this activity is linked to the signuplayout.xml and is launched when the ``Register''
+button is clicked in the loginPage activity. This activity consists of several text boxes which
+allows the user to insert his/her information into. Note that these text boxes have ``hints'' which
+indicates to the user what information is required to be entered by the user at each text box. At
+the bottom of the application there is a button named ``Register'' to officially register the user, and once
+clicked and if successful the application will lead back to the loginPage activity and if
+unsuccessful the application will stay on the same activity and display a not registered message
+via a toast.
+\item DashBoard: this activity is linked to the dashboardlayout.xml and is launched when the user is
+successfully logged in, as well as this activity is the ``main activity'' after logging in. In this activity
+is where the user can change his availability status, there is an analogue clock that displays the
+time, a text view section which displays the details of the passenger that has been allocated to
+the specific driver, and there is a ``Go To Maps'' button which once clicked the application leads
+to the MapsActivity.
+\end{itemize}
+\underline{Note:} all of the above activities extends from the Activity superclass.
+
+\begin{itemize}
+\item MapsActivity: this activity is linked to the activity\_maps.xml and is launched when the ``Go To
+Maps'' button is clicked in the dashboard. The main purpose of the activity is to give directions
+to the driver to get to the passenger, and to get the passenger to his/her destination. This
+activity makes use of the google maps API and google directions API, along with the auxiliary
+predefined modules by google. These modules include DirectionFinder determines the route of
+the trip required, DirectionFinderListener which listens when directions are requested, Duration
+calculates and stores the duration of the current trip, Route stores the route.
+\end{itemize}
+Auxiliary classes:
+\begin{itemize}
+\item AsyncClassSignUp and AsyncClassLogin: initiates the communication with the back-end server in
+order to send the required registration and login information respectively to the server, and
+receives a response from the server. Based on the response, certain decisions are made in the
+signUpPage and loginPage respectively. Please note that the IP address when declaring the
+Socket has to be altered based on the machine that the back-end server is being run on.
+\item JSON\_Handler: converts an array of strings to a JSON string in order to send data to the server
+using a JSON string format. This class was created by Jason for use in the server, but we made use of it in the android app as well.
+\end{itemize}
+\underline{Important Notes:}\\ The actual application is not fully as required due time constraints and issues with the google
+API, however basic functionality of the app is operating.
 \newpage
 \section{SCRUM Documentation}
 Note: Each standard sprint we implemented has a length of 1 week. It should also be noted that each day at 19:00 the team would do a daily stand-up meeting via Google Hangouts wherein each member would describe what they have done, the problems they faced, as well as get any answers related to their concerns if they needed to do so.
@@ -228,6 +293,12 @@ After compiling a .jar file should be present in the build folder of the Java pr
 \subsubsection{Server}
 Similarly to the Call Center Desktop Application, the server has also been constructed using Java as the programming language in order to more easily maintain compatibility with all the other programs. So in order to compile the code, you can follow a similar approach to 6.1.1 for the desktop application. Note it is required that you have installed the latest java JDK as well as JRE software. There is however an extra step required to setup the database. One needs to install mySQL and install it to the system using the default settings. When setting up user details, set the root password to ``jason''. Keep the port number the default. Furthermore, make sure to restore the current database from the repository code to the server using mysql -u root -p WitsCABS < WitsCABS.sql where this command is run in the same directory as the sql backup. Finally, to make sure that you can receive connections from client programs, make sure to give them your current computer ip address to input into their program code for testing. Note: it is critical to be on a network other than the Wits network as the proxy service and network policies interfere with the correct running of the server.
 To run the server, follow the similar setup as for the desktop application, i.e. navigate to the .jar file in the command prompt using cd and then type: java -jar WitsCABS\_Backend.jar
+
+\newpage
+\subsubsection{Android Application}
+The Android application has been developed by using IntelliJ Idea as an IDE with Java as a programming language. Java has been chosen as it is the most familiar programming language between the group as well as the most used among android developers. Before installing the .apk file, one has to install the latest version of the Java jdk (1.8) and the android sdk (API 23). In order to install the app on a mobile device,  one would be required to install IntelliJ Idea or Android Studio. We will assume that we're using IntelliJ Idea in this description. The first thing to do would to navigate to the project structure. In the project structure, choose the jdk and sdk you downloaded on your system. 
+When using a mobile device to run the application, make sure that developer options are enabled. Do this by clicking 10 times on the build number under my device info in the settings of the android device. Once this is completed, enable USB Debugging in the developer options. You are now ready to install the WitsCabs app. Simply click on the ``Run'' tab on the top of the screen and choose ``Run Application'' with the mobile device connected to the pc running IntelliJ Idea via a usb cable. When prompted to choose which device to run the application on, choose the name of the android device being used and the application .apk file will be installed on the device. Once this is completed, all that is needed is a Wi-Fi or cellular connection on the device for the app to work. Note: once installed, the application can be run from the android device without having to install it again.
+
 
 
 \pagebreak

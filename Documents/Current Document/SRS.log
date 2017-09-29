@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.6)  28 SEP 2017 17:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.6)  29 SEP 2017 22:12
 entering extended mode
 **./SRS.tex
 (SRS.tex
@@ -328,62 +328,80 @@ File: images/statemachinediagram.png Graphic file (type png)
 Package pdftex.def Info: images/statemachinediagram.png used on input line 140.
 
 (pdftex.def)             Requested size: 342.27791pt x 54.20236pt.
- [20 <./images/GetDataSequenceDiagram.png> <./images/statemachinediagram.png>]
-<images/CallCenterSequence.png, id=79, 462.72874pt x 693.59125pt>
+ [20 <./images/GetDataSequenceDiagram.png> <./images/statemachinediagram.png>] 
+[21]
+<images/CallCenterSequence.png, id=82, 462.72874pt x 693.59125pt>
 File: images/CallCenterSequence.png Graphic file (type png)
 
 <use images/CallCenterSequence.png>
-Package pdftex.def Info: images/CallCenterSequence.png used on input line 144.
+Package pdftex.def Info: images/CallCenterSequence.png used on input line 147.
 (pdftex.def)             Requested size: 231.3638pt x 346.79477pt.
- [21 <./images/CallCenterSequence.png>]
-Overfull \hbox (3.88582pt too wide) in paragraph at lines 152--163
+ [22 <./images/CallCenterSequence.png>]
+<images/AndroidAppUML.jpg, id=87, 765.6103pt x 627.09282pt>
+File: images/AndroidAppUML.jpg Graphic file (type jpg)
+
+<use images/AndroidAppUML.jpg>
+Package pdftex.def Info: images/AndroidAppUML.jpg used on input line 151.
+(pdftex.def)             Requested size: 382.80421pt x 313.54564pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 162.
+
+
+("C:\Users\Jason\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 162.
+
+[23 <./images/AndroidAppUML.jpg>] [24] [25]
+Overfull \hbox (3.88582pt too wide) in paragraph at lines 217--228
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--171
+Underfull \hbox (badness 10000) in paragraph at lines 230--236
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--171
+Underfull \hbox (badness 10000) in paragraph at lines 230--236
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--171
+Underfull \hbox (badness 10000) in paragraph at lines 230--236
 
  []
 
-[22] [23]
-Overfull \hbox (3.88582pt too wide) in paragraph at lines 176--189
+[26] [27]
+Overfull \hbox (3.88582pt too wide) in paragraph at lines 241--254
 [] 
  []
 
 
-Overfull \hbox (3.88582pt too wide) in paragraph at lines 200--208
+Overfull \hbox (3.88582pt too wide) in paragraph at lines 265--273
 [] 
  []
 
-[24] [25] [26] [27]
+[28] [29] [30] [31] [32]
 Missing character: There is no Â in font cmr12!
 Missing character: There is no ’ in font cmr12!
- [28] (SRS.aux) ) 
+ [33] (SRS.aux) ) 
 Here is how much of TeX's memory you used:
- 1532 strings out of 493323
- 23057 string characters out of 3130016
+ 1554 strings out of 493323
+ 23519 string characters out of 3130016
  84861 words of memory out of 3000000
- 5071 multiletter control sequences out of 15000+200000
+ 5089 multiletter control sequences out of 15000+200000
  8808 words of font info for 31 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,9n,25p,1508b,201s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Jason/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmbx12.pfb><C:/Users/Jason/AppData/Local/Programs/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Jason/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on SRS.pdf (28 pages, 217832 bytes).
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Jason/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on SRS.pdf (33 pages, 361684 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
+ 138 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
