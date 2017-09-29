@@ -11,6 +11,7 @@
             android:text="Login"
             android:id="@+id/loginButton"
             android:layout_marginBottom="183dp"
+        android:onClick="getLoginDetails"
             android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"/>
     <EditText
             android:layout_width="wrap_content"

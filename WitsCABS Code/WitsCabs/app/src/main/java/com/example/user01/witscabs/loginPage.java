@@ -32,9 +32,12 @@ public class loginPage extends Activity {
         String[] varActualVariables = {username,password};
 
         String json = JSON_Handler.constructJSONString(varNames, varTypes, varActualVariables);
+        AsyncClassLogin asyncClassLogin=new AsyncClassLogin(json);
+        asyncClassLogin.execute(json);
 
+        startActivity(new Intent(getApplicationContext(),DashBoard.class));
 
-        AsyncHandler asyncHandler=new AsyncHandler() {
+/*        AsyncHandler asyncHandler=new AsyncHandler() {
             @Override
             public void handleResponse(String response) {
                 if(response.equals("OK"))
@@ -42,7 +45,7 @@ public class loginPage extends Activity {
                 else
                     Toast.makeText(getApplicationContext(),"Signup failed",Toast.LENGTH_SHORT).show();
             }
-        };
+        };*/
 
 /*        Socket client; String feedback;
         DataOutputStream out;

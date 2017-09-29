@@ -46,18 +46,20 @@ public class signUpPage extends Activity {
         Car_Make = carMakeET.getText().toString();
         carColourET = (EditText)findViewById(R.id.carColourE);
         Car_Colour = carColourET.getText().toString();
-        Home_Area = "Sandton";
-        //passwordET = (EditText)findViewById(R.id.passwordE);
-       // Driver_Password = passwordET.getText().toString();
-        Driver_Password = "password";
-       /* RadioGroup radioGroup=(RadioGroup) findViewById(R.id.radioGroup);
+        //Home_Area = "Sandton";
+        passwordET = (EditText)findViewById(R.
+                id.passwordE);
+       Driver_Password = passwordET.getText().toString();
+        //Driver_Password = "password";
+       RadioGroup radioGroup=(RadioGroup) findViewById(R.id.radioGroup);
         if(radioGroup.getCheckedRadioButtonId()!=-1){
             int id=radioGroup.getCheckedRadioButtonId();
             View radioButton=radioGroup.findViewById(id);
             int radioId=radioGroup.indexOfChild(radioButton);
             RadioButton radioButton1=(RadioButton) radioGroup.getChildAt(radioId);
-            area=(String) radioButton1.
-        }*/
+            Home_Area=(String) radioButton1.getText();
+        }
+        if (Home_Area.isEmpty()) Home_Area="Sandton";
 
         String[] varNames = {"First_Name", "Last_Name", "Phone_Number", "Car_Reg", "Car_Make", "Car_Colour", "Home_Number", "Home_StreetName", "Home_Area", "Driver_Password"};
         String[] varTypes = {"String","String","String","String","String","String","int", "String", "String", "String"};
