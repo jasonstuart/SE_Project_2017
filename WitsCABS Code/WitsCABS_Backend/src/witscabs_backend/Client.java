@@ -209,6 +209,10 @@ public class Client extends Thread
                 + "VALUES("+driver+"," + customer_ID.getInt(1) + ");";
         System.out.println(update);
         WitsCABS_Backend.sendSQLQuery(update);
+        
+        String change = "Update Driver Set Driver_Status = 0 WHERE Driver_ID = " + driver + ";";
+        System.out.println(change);
+        WitsCABS_Backend.sendSQLQuery(change);
     }
     
     public static int assignDriver(ResultSet r, String num, String street, String suburb) throws SQLException, IOException
