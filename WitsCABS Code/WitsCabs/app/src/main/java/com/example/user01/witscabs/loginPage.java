@@ -27,7 +27,27 @@ public class loginPage extends Activity {
         String username = usernameE.getText().toString();
         String password = passwordE.getText().toString();
 
-        Socket client; String feedback;
+        String[] varNames = {"username", "password"};
+        String[] varTypes = {"String","String"};
+        String[] varActualVariables = {username,password};
+
+        String json = JSON_Handler.constructJSONString(varNames, varTypes, varActualVariables);
+        AsyncClassLogin asyncClassLogin=new AsyncClassLogin(json);
+        asyncClassLogin.execute(json);
+
+        startActivity(new Intent(getApplicationContext(),DashBoard.class));
+
+/*        AsyncHandler asyncHandler=new AsyncHandler() {
+            @Override
+            public void handleResponse(String response) {
+                if(response.equals("OK"))
+                    startActivity(new Intent(getApplicationContext(),loginPage.class));
+                else
+                    Toast.makeText(getApplicationContext(),"Signup failed",Toast.LENGTH_SHORT).show();
+            }
+        };*/
+
+/*        Socket client; String feedback;
         DataOutputStream out;
         BufferedReader read;
         try {
@@ -38,7 +58,7 @@ public class loginPage extends Activity {
             feedback=read.readLine();
             if(feedback.equals("SUCCESS")) System.out.println("change to main activity");
             else Toast.makeText(loginPage.this,"Incorrect login details",Toast.LENGTH_LONG).show();
-        }catch(IOException e){System.out.println(e);}
+        }catch(IOException e){System.out.println(e);}*/
     }
     public void goToSignUp(View v){
         Button button = (Button)v;

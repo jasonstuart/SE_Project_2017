@@ -21,7 +21,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/bgb"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -39,7 +39,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".signUpPage"
+        <activity android:name=".StartUpActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -48,7 +48,8 @@
         </activity>
         <activity android:name=".loginPage" />
         <activity android:name=".DashBoard" />
-
+        <activity android:name=".signUpPage"/>
+        <activity android:name=".MapsActivity"/>
         <!--
             <activity
             android:name=".MapsActivity"

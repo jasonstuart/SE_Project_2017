@@ -15,60 +15,78 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/firstNameE" android:layout_alignParentTop="true" android:layout_alignParentStart="true"
-            android:layout_marginTop="51dp" android:hint="First Name"/>
+            android:layout_marginTop="51dp" android:hint="First Name"
+        android:layout_alignParentLeft="true" />
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/lastNameE" android:layout_below="@+id/firstNameE" android:layout_alignParentStart="true"
-            android:hint="Last Name"/>
+            android:hint="Last Name"
+        android:layout_alignParentLeft="true" />
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:ems="10"
             android:id="@+id/phoneE" android:layout_below="@+id/lastNameE" android:layout_alignParentStart="true"
-            android:hint="Phone Number"/>
+            android:hint="Phone Number"
+        android:layout_alignParentLeft="true" />
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:ems="10"
             android:id="@+id/homePhoneE" android:layout_below="@+id/phoneE" android:layout_alignParentStart="true"
-            android:hint="Home Number"/>
+            android:hint="Home Number"
+        android:layout_alignParentLeft="true" />
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:id="@+id/addressE" android:layout_below="@+id/homePhoneE" android:layout_alignParentStart="true"
-            android:hint="Address" android:inputType="text"/>
+            android:hint="Address" android:inputType="text"
+        android:layout_alignParentLeft="true" />
     <RadioGroup
             android:layout_width="match_parent"
+        android:id="@+id/radioGroup"
             android:layout_height="match_parent" android:layout_below="@+id/addressE"
-            android:layout_alignParentStart="true">
-        <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="First Area"
-                android:id="@+id/radioButton"/>
-        <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Second Area"
-                android:id="@+id/radioButton2"/>
-        <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Third Area"
-                android:id="@+id/radioButton3"/>
+            android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true">
 
-        <Button
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sandton" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rosebank" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Illovo" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Auckland Park" />
+    </RadioGroup>
+
+    <Button
                 android:id="@+id/signUpButton"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/carColourE"
+                android:layout_below="@+id/passwordE"
             android:onClick="getSignUpDetails"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
@@ -83,7 +101,8 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="Car Make"
-            android:inputType="text" />
+            android:inputType="text"
+            android:layout_alignParentLeft="true" />
 
         <EditText
             android:id="@+id/carColourE"
@@ -94,15 +113,26 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="Car Colour"
-            android:inputType="text" />
-    </RadioGroup>
+            android:inputType="text"
+            android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:id="@+id/passwordE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/carColourE"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword" />
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="text"
             android:ems="10"
             android:id="@+id/carRegE" android:layout_below="@+id/radioGroup" android:layout_alignParentStart="true"
-            android:hint="Car Registration" android:selectAllOnFocus="false"/>
+            android:hint="Car Registration" android:selectAllOnFocus="false"
+        android:layout_alignParentLeft="true" />
 
 
 </RelativeLayout>
