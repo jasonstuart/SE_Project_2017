@@ -18,13 +18,13 @@ In addition to this, a fully descriptive documentation of all programming techni
 WITS students often require transport to get them from place to place, it could be to and from a place of residence, shopping centers, places to support wits sports, internet cafes etc. Wits would like to implement a transport system similar to Uber that Wits students are able to use as a means of travel.
 
 \subsection{Project Objective}
-The objective of this project is not only to learn and make use of specific design procedures and team management skills, but also to further our skills in development of software using specific techniques that will be used in industry. Further, the objective is to have a working prototype of the WitsCABS project by the end, using these skills so that we are more comfortable when going into industry.
+The objective of this project is not only to learn and make use of specific design procedures and team management skills, but also to further our skills in development of software using specific techniques that will be used in industry. Further, the objective is to have a working prototype of the WitsCABS project with the primary functionality operating by the end of the time allocated by the client. The project team would also like to gain experience in project development and management as it will be useful in our careers.
 \newpage
 \subsection{Scope}
 Our core objective is to design, develop and implement a software system which will be used to manage a fleet of taxi-cabs for a company (as per the project brief). Our company, WitsCABS Company, will be independently run and will employ our own staff/drivers. Vehicles however may either be owned by WitsCABS Company or by the drivers. The service will run based on service zones within the city of operation i.e. the city will be split into various sectors which will allow for more efficient ride time. Each driver will be equipped with a smart-phone embedded with GPS, maps and a navigational tracking system. All vehicles being dispatched will be on instruction from the 24-hour manned Dispatching Control Centre (DCC) which will be in direct contact with clients via calls to the centre.
 \\\\
 The front-end of our system will comprise mainly of an android application used by the drivers which will be integrated with a GPS and mapping service such as Google maps to optimize routes taken as well as save time in the case of human error. A simple website will be set up as well to deal with customer queries/complaints and basic information about WitsCABS. To achieve this, we will be primarily using Java as a programming language as well as some HTML and Javascript. The front-end of our mobile android application will consist of the visual representation of the map being used as well as any turning signals or warning, messages etc. needing to be displayed on the screen, a login screen for the drivers where they would enter their credentials, a waiting screen for when they are awaiting a client. Furthermore, the drivers should communicate with the DCC. For this, a web-based application and/or application will need to be created for the DCC where they can view the entire city of operations. The front-end of this application would comprise of a form that will allow the DCC to capture customer details. It will then send these details to the back-end which will then determine which cab to assign.\\ \\
-The Back-end of our system will make use of Java as well as JSON. This will consist of storing all the drivers information (Names, license number, car registration, age etc.) as well as each trip he works as well as any necessary information about the passenger transported. It will also be integral to integrate the maps into finding which driver is best suited for the next pickup requested based on some sort of efficiency algorithm which we will design. This information would most probably need to be stored in a database and communicate with our mobile application using JSON. Another useful system to have would be to record every client that has rode with one of our cabs before and perhaps assign a customer number or ID to use the following time he/she requests a ride. \\\\
+The Back-end of our system will make use of Java as well as JSON. This will consist of storing all the drivers information (Names, license number, car registration, age etc.), details related to each trip he makes as well as any necessary information about the passenger transported. It will also be integral to integrate the maps into finding which driver is best suited for the next pickup requested based on some sort of efficiency algorithm which we will design. This information would most probably need to be stored in a database and communicate with our mobile application using JSON. \\\\
 \includegraphics[scale=0.7]{user_flow}
 \pagebreak
 \subsection{Overview}
@@ -273,9 +273,9 @@ Begin overall test cases and find bugs in all software & Whole Team \\ \hline
 
 \subsubsection{Sprint Retrospective}
 \underline{Overview}\\
-The team is pleased to say that the networking code between the android app and server now successfully runs for some functions, meaning that the app is now in a demonstrable state. This took a lot of effort to program as we were constantly facing new challenges, but through perseverance, a strong quality of the team, it has been done. The main focus of this week however was bug testing, which the team did an admirable job finding these small but significant bugs in the software code. Testing also occurred which was a huge success.\\
+The team is pleased to say that the networking code between the android app and server now successfully runs for some functions, meaning that the app is now in a demonstrable state. This took a lot of effort to program as we were constantly facing new challenges, but through perseverance, a strong quality of the team, it has been done. The main focus of this week however was bug testing, which the team did an admirable job finding these small but significant bugs in the software code. Testing also occurred which was a huge success. It should be noted that not all the android functions were implemented, but that at least the core networking has been implemented.\\
 \underline{Negatives}\\
-The team could not identify any Negative aspects relating to this week. All went smoothly.\\
+The team could not identify any Negative aspects relating to this week. All went smoothly. The only thing is that the group wished they could have a fully functional android app with all functions implemented.\\
 \underline{Positives}\\
 The team has been putting in extra hours behind the scenes to make sure that the project deadline is met, even though these hours are not officially scholar hours. This shows that the team is dedicated and motivated to give their all in making sure this project completes successfully. 
 
@@ -333,6 +333,17 @@ When using a mobile device to run the application, make sure that developer opti
 \item Evaluation, compiling and running Desktop Application by Robert (Section 6.1.1)
 \item Evaluation, compiling and running Server and Database by Jason (Section 6.1.2)
 \item Evaluation, compiling and running Android Application by Rashad (Section 6.1.3)
+
+\section{Project Sign Off}
+The following signatures related to each specific person below hereby declares that said person is happy with the Documentation, as well as the Code that has been created for the submission and that each person is happy with the amount of contribution that they gave to this project (which can be seen both by the Credentials heading above for the documentation as well as checking the commit version history for analysis of coding contribution) which can be viewed by the lecturers and that said persons are ready to submit the project in its current format.
+
+Robert Basson: \includegraphics[scale=0.12]{Robert_Signature}
+
+Rashad Akoodie: \includegraphics[scale=0.08]{Rashad_Signature}
+
+Amine Boukrout: \includegraphics[scale=0.05]{Amine_Signature}
+
+Jason Stuart (Group Leader): \includegraphics[scale=0.05]{Jason_Signature}
 
 \end{itemize}
 \end{document}

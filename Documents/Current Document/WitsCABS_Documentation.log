@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.6)  30 SEP 2017 12:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.6)  30 SEP 2017 17:28
 entering extended mode
 **./WitsCABS_Documentation.tex
 (WitsCABS_Documentation.tex
@@ -386,24 +386,53 @@ Overfull \hbox (3.88582pt too wide) in paragraph at lines 265--273
 [28] [29] [30] [31] [32]
 Missing character: There is no Â in font cmr12!
 Missing character: There is no ’ in font cmr12!
- [33] [34] (WitsCABS_Documentation.aux) ) 
+ [33]
+<images/Robert_Signature.jpg, id=124, 654.19406pt x 229.60782pt>
+File: images/Robert_Signature.jpg Graphic file (type jpg)
+
+<use images/Robert_Signature.jpg>
+Package pdftex.def Info: images/Robert_Signature.jpg used on input line 340.
+(pdftex.def)             Requested size: 78.4999pt x 27.55174pt.
+
+<images/Rashad_Signature.jpg, id=125, 1045.65656pt x 551.81157pt>
+File: images/Rashad_Signature.jpg Graphic file (type jpg)
+
+<use images/Rashad_Signature.jpg>
+Package pdftex.def Info: images/Rashad_Signature.jpg used on input line 342.
+(pdftex.def)             Requested size: 83.65422pt x 44.14583pt.
+
+<images/Amine_Signature.jpg, id=126, 2538.48375pt x 434.62375pt>
+File: images/Amine_Signature.jpg Graphic file (type jpg)
+
+<use images/Amine_Signature.jpg>
+Package pdftex.def Info: images/Amine_Signature.jpg used on input line 344.
+(pdftex.def)             Requested size: 126.93163pt x 21.73245pt.
+
+<images/Jason_Signature.jpg, id=127, 1510.64375pt x 442.65375pt>
+File: images/Jason_Signature.jpg Graphic file (type jpg)
+
+<use images/Jason_Signature.jpg>
+Package pdftex.def Info: images/Jason_Signature.jpg used on input line 346.
+(pdftex.def)             Requested size: 75.5366pt x 22.13397pt.
+ [34 <./images/Robert_Signature.jpg> <./images/Rashad_Signature.jpg> <./images/
+Amine_Signature.jpg> <./images/Jason_Signature.jpg>] (WitsCABS_Documentation.au
+x) ) 
 Here is how much of TeX's memory you used:
- 1554 strings out of 493323
- 23747 string characters out of 3130016
+ 1574 strings out of 493323
+ 24325 string characters out of 3130016
  84861 words of memory out of 3000000
- 5089 multiletter control sequences out of 15000+200000
+ 5105 multiletter control sequences out of 15000+200000
  8808 words of font info for 31 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,9n,25p,1696b,201s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Jason/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Jason/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Jas
-on/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><
-C:/Users/Jason/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb>
-Output written on WitsCABS_Documentation.pdf (34 pages, 363332 bytes).
+<C:/Users/Jason/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmbx12.pfb><C:/Users/Jason/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr12.pfb><C:/Users/Jason/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Jason/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on WitsCABS_Documentation.pdf (34 pages, 902311 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
+ 145 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
