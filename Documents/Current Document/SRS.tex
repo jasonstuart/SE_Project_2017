@@ -3,8 +3,8 @@
 \graphicspath{{images/}}
 
 \begin{document}
-\title{WitsCABS Documentation\\Group 10}
-\author{\underline{Front End} \\886515 - Amine Boukrout, 669006 - Rashad Akoodie\\\underline{Back End}\\1064934 - Robert Basson, 1171733 - Jason Stuart (GL)\\ \\ Group Leader: 1171733 - Jason Stuart\\ \\}
+\title{WitsCABS Documentation\\Project 10\\Group 10\\}
+\author{ Group Leader: 1171733 - Jason Stuart\\ \\ \underline{Front End} \\886515 - Amine Boukrout\\ 669006 - Rashad Akoodie\\\\\underline{Back End}\\1064934 - Robert Basson\\ 1171733 - Jason Stuart (GL)\\ \\}
 \date{\today}
 \maketitle
 \newpage
@@ -25,7 +25,7 @@ Our core objective is to design, develop and implement a software system which w
 \\\\
 The front-end of our system will comprise mainly of an android application used by the drivers which will be integrated with a GPS and mapping service such as Google maps to optimize routes taken as well as save time in the case of human error. A simple website will be set up as well to deal with customer queries/complaints and basic information about WitsCABS. To achieve this, we will be primarily using Java as a programming language as well as some HTML and Javascript. The front-end of our mobile android application will consist of the visual representation of the map being used as well as any turning signals or warning, messages etc. needing to be displayed on the screen, a login screen for the drivers where they would enter their credentials, a waiting screen for when they are awaiting a client. Furthermore, the drivers should communicate with the DCC. For this, a web-based application and/or application will need to be created for the DCC where they can view the entire city of operations. The front-end of this application would comprise of a form that will allow the DCC to capture customer details. It will then send these details to the back-end which will then determine which cab to assign.\\ \\
 The Back-end of our system will make use of Java as well as JSON. This will consist of storing all the drivers information (Names, license number, car registration, age etc.) as well as each trip he works as well as any necessary information about the passenger transported. It will also be integral to integrate the maps into finding which driver is best suited for the next pickup requested based on some sort of efficiency algorithm which we will design. This information would most probably need to be stored in a database and communicate with our mobile application using JSON. Another useful system to have would be to record every client that has rode with one of our cabs before and perhaps assign a customer number or ID to use the following time he/she requests a ride. \\\\
-\includegraphics[scale=0.8]{user_flow}
+\includegraphics[scale=0.7]{user_flow}
 \pagebreak
 \subsection{Overview}
 The document will be broken up into multiple sections. As already mentioned before in the document, we have given an introduction as to why this document has been typed up, the objectives to be met, and the problem statement that describes the problem at hand. The scope of what the project is all about and a basic description of the required features needed to be implemented is also discussed above. We also discuss the relevant stakeholders next. In section 2, an analysis of how the project will be conducted is discussed. This includes a discussion of system architecture types, software required for the project, as well as how the team will be managed and handled during development. In section 3, a list of formal required functions will be provided for both front-end software as well as the back-end. Section 4 will then go into the design documentation, such as Database design, e.t.c. Section 5 will then contain relevant documentation related to Sprint Planning as well as Sprint Retrospectives for the SCRUM Methodology. Then The document will discuss how to evaluate the software for the project owner's use in Section 6. Finally a list of responsibilities and credentials is provided in section 7.
@@ -90,7 +90,7 @@ Once the driver has been allocated, a notification will be sent firstly to the d
 \pagebreak
 \section{Functional Requirements}
 \subsection{Front-End Mobile App}
-\begin{description}
+\begin{itemize}
 \setlength\itemsep{0em}
 \item Send Status updates to the server on whether this driver is available or not
 \item Send location updates so the server knows where you are when status is marked available.
@@ -98,17 +98,17 @@ Once the driver has been allocated, a notification will be sent firstly to the d
 \item Find the quickest route to the destination.
 \item Update Driver details
 \item Register Driver onto the system.
-\end{description}
+\end{itemize}
 \subsection{Front-End Desktop Application}
-\begin{description}
+\begin{itemize}
 \setlength\itemsep{0em}
 \item Create new passenger
 \item Insert passenger into database via the server
 \item Edit record
 \item Push and save information to database
-\end{description}
+\end{itemize}
 \subsection{Back-End Server}
-\begin{description}
+\begin{itemize}
 \setlength\itemsep{0em}
 \item Accept incoming connections from desktop applications, which contains details related to the passenger in need of transport.
 \item Analyze which service zone the passenger is located in.
@@ -117,7 +117,7 @@ Once the driver has been allocated, a notification will be sent firstly to the d
 \item Allow drivers to mark if available or not via a status change
 \item Be notified when a driver is close to pick up point via SMS.
 \item Be notified when passenger is there at their destination, to automatically mark drivers as complete, i.e. the driver is transitioning back to their house or service taxi rank. Thereafter the driver can mark they are ready for another job.
-\end{description}
+\end{itemize}
 \pagebreak
 
 \section{Design Documentation}
@@ -304,7 +304,7 @@ When using a mobile device to run the application, make sure that developer opti
 \pagebreak
 \section{Credentials}
 \subsection{The Credentials}
-\begin{description}
+\begin{itemize}
 \setlength\itemsep{0em}
 \item Purpose by Robert, Rashad, and Jason (Section 1.1)
 \item Problem Statement by Robert (Section 1.2)
@@ -327,9 +327,12 @@ When using a mobile device to run the application, make sure that developer opti
 \item Back-End Server to be handled by Jason (Section 3.3)
 \item Database Design by Jason (Section 4.1)
 \item Server Design by Jason (Section 4.2)
-\item SCRUM Documentation by Jason
+\item Call Center Design by Robert (Section 4.3)
+\item Android App Design by Amine (Section 4.4)
+\item SCRUM Documentation by Jason as Group Leader
 \item Evaluation, compiling and running Desktop Application by Robert (Section 6.1.1)
 \item Evaluation, compiling and running Server and Database by Jason (Section 6.1.2)
+\item Evaluation, compiling and running Android Application by Rashad (Section 6.1.3)
 
-\end{description}
+\end{itemize}
 \end{document}
