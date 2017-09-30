@@ -1,10 +1,11 @@
 # SE_Project_2017_Group_10
 ## WitsCABS Project 10
 
-###Documentation
+### Documentation
 Please Note that all Documentation is currently sitting in the Documentation sub-folder. Inside this folder is a folder called "Current Document" which is the latest current document. i.e. the Document path to the latest documentation is Documents/Current Document/WitsCABS_Documentation.pdf
 
-###Compile and Run Android Application
+### Compile and Run Android Application
+Note: The app/project data is located at WitsCABS_Code/WitsCabs_Android/.
 The Android application has been developed by using IntelliJ Idea as an IDE
 with Java as a programming language. Java has been chosen as it is the most
 familiar programming language between the group as well as the most used
@@ -29,6 +30,7 @@ application can be run from the android device without having to install it
 again.
 
 ### Compile and Run Call-Center Application
+Note: The app/project data is located at WitsCABS_Code/CallCenter/.
 The Desktop Application to be used in the call center will be a Java program
 (as previously mentioned). So in order to compile it an IDE that supports
 Java will be required eg Eclipse or Netbeans. For the sake of this document
@@ -51,6 +53,9 @@ without the IDE installed, navigate to the file in the command prompt using
 the cd command and then type: java -jar CallCenter.jar
 
 ### Compile and Run Backend-Server
+Note: The project folder is located at WitsCABS_Code/WitsCabs_Backend/.
+The distributable is located at WitsCABS_Code/WitsCabs_Backend/dist/
+The SQL Backup is located at WitsCABS_Code/WitsCabs_Backend/MySQL Server/
 Similarly to the Call Center Desktop Application, the server has also been
 constructed using Java as the programming language in order to more easily
 maintain compatibility with all the other programs. So in order to compile
