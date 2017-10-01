@@ -5,29 +5,8 @@
 Please Note that all Documentation is currently sitting in the Documentation sub-folder. Inside this folder is a folder called "Current Document" which is the latest current document. i.e. the Document path to the latest documentation is Documents/Current Document/WitsCABS_Documentation.pdf
 
 ### Compile and Run Android Application
-Note: The app/project data is located at WitsCABS_Code/WitsCabs_Android/.
-The Android application has been developed by using IntelliJ Idea as an IDE
-with Java as a programming language. Java has been chosen as it is the most
-familiar programming language between the group as well as the most used
-among android developers. Before installing the .apk file, one has to install
-the latest version of the Java jdk (1.8) and the android sdk (API 23). In order
-to install the app on a mobile device, one would be required to install IntelliJ
-Idea or Android Studio. We will assume that we're using IntelliJ Idea in this
-description. The first thing to do would to navigate to the project structure.
-In the project structure, choose the jdk and sdk you downloaded on your
-system. When using a mobile device to run the application, make sure that
-developer options are enabled. Do this by clicking 10 times on the build
-number under my device info in the settings of the android device. Once
-this is completed, enable USB Debugging in the developer options. You are
-now ready to install the WitsCabs app. Simply click on the \Run" tab on
-the top of the screen and choose \Run Application" with the mobile device
-connected to the pc running IntelliJ Idea via a usb cable. When prompted
-to choose which device to run the application on, choose the name of the
-android device being used and the application .apk file will be installed on
-the device. Once this is completed, all that is needed is a Wi-Fi or cellular
-connection on the device for the app to work. Note: once installed, the
-application can be run from the android device without having to install it
-again.
+The Android application has been developed by using Android Studio as our IDE with Java as a programming language. Java has been chosen as it is the most familiar programming language between the group as well as the most used among android developers. Before installing the .apk file, one has to install the latest version of the Java JDK (1.8) and the android SDK (API 23). In order to install the app on a mobile device,  one would be required to install Android Studio. We will assume that we're using Android Studio in this description. The first thing to do would to navigate to the project structure. In the project structure, choose the JDK and SDK you downloaded on your system. 
+When using a mobile device to run the application, make sure that developer options are enabled. Do this by clicking 10 times on the build number under my device info in the settings of the android device. Once this is completed, enable USB Debugging in the developer options. You are now ready to install the WitsCabs app. Simply click on the ``Run'' tab on the top of the screen and choose ``Run Application'' with the mobile device connected to the pc running Android Studio via a USB cable. When prompted to choose which device to run the application on, choose the name of the android device being used and the application .apk file will be installed on the device. Once this is completed, all that is needed is a Wi-Fi or cellular connection on the device for the app to work. Also, ensure that once the app is installed on the device, the user should give the app location permissions to the app explicitly. This can be done by going into the settings of the device, navigate to ``Applications'', find the WitsCABS app and click on it, under permissions ensure that location is active by sliding the bar to ``On''. For testing purposes, use a Wi-Fi connection that is being used by the Server application. Note: once installed, the application can be run from the android device without having to install it again.
 
 ### Compile and Run Call-Center Application
 Note: The app/project data is located at WitsCABS_Code/CallCenter/.
