@@ -123,7 +123,7 @@ Once the driver has been allocated, a notification will be sent firstly to the d
 \section{Design Documentation}
 \subsection{Database Design}
 \includegraphics[scale=0.5]{Database_Diagram}
-The approach taken here is to achieve as minimalistic approach, storing the least amount of information possible. Hence we just have 3 tables, one for the customer and their details, one for the driver and their details and a bridge entity to match the two together. To simplify things, we decided that if a driver is part of a rank, their home address details become the ranks address. We also made it that the customers do not have to each time log in, they just call and create a new customer each time for convenience.
+The approach taken here is to achieve as minimalistic approach, storing the least amount of information possible. Hence we just have 3 tables, one for the customer and their details, one for the driver and their details and a bridge entity to match the two together. To simplify things, we decided that if a driver is part of a rank, their home address details become the ranks address. This is due to the fact that we only need to know where they sit waiting for a new drive. It will also help improve the efficiency of the algorithm that assigns the customer to a driver. We also made it that the customers do not have to each time log in, they just call and create a new customer each time for convenience.
 
 \subsection{Server Design}
 \subsubsection{Class Diagram}
