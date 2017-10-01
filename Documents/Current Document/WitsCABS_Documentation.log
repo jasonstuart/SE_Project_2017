@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.6)  1 OCT 2017 16:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.6)  1 OCT 2017 18:34
 entering extended mode
 **./WitsCABS_Documentation.tex
 (WitsCABS_Documentation.tex
@@ -148,10 +148,16 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 9.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 9.
- [1
 
-{C:/Users/Jason/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (WitsCABS_D
-ocumentation.toc
+Overfull \hbox (7.84479pt too wide) in paragraph at lines 10--11
+[]\OT1/cmr/m/n/12 Github Repos-i-tory Link: https://github.com/jasonstuart/SE[]
+Project[]2017 
+ []
+
+[1
+
+{C:/Users/Jason/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+(WitsCABS_Documentation.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -184,62 +190,62 @@ Missing character: There is no ’ in font cmr12!
 File: images/user_flow.jpg Graphic file (type jpg)
 
 <use images/user_flow.jpg>
-Package pdftex.def Info: images/user_flow.jpg used on input line 28.
+Package pdftex.def Info: images/user_flow.jpg used on input line 29.
 (pdftex.def)             Requested size: 405.76317pt x 356.22844pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--30
+Underfull \hbox (badness 10000) in paragraph at lines 25--31
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--30
+Underfull \hbox (badness 10000) in paragraph at lines 25--31
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--30
+Underfull \hbox (badness 10000) in paragraph at lines 25--31
 
  []
 
 
-Overfull \hbox (15.76317pt too wide) in paragraph at lines 24--30
+Overfull \hbox (15.76317pt too wide) in paragraph at lines 25--31
 []
  []
 
 [5] [6 <./images/user_flow.jpg>] [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 48--50
+Underfull \hbox (badness 10000) in paragraph at lines 49--51
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--50
+Underfull \hbox (badness 10000) in paragraph at lines 49--51
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--50
+Underfull \hbox (badness 10000) in paragraph at lines 49--51
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--50
+Underfull \hbox (badness 10000) in paragraph at lines 49--51
 
  []
 
 [9]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 54.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 55.
  ("C:\Users\Jason\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 54.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 55.
  [10]
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
@@ -247,27 +253,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--63
 Missing character: There is no Â in font cmr12!
 Missing character: There is no ’ in font cmr12!
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--68
+Underfull \hbox (badness 10000) in paragraph at lines 66--69
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--68
+Underfull \hbox (badness 10000) in paragraph at lines 66--69
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 70--73
+Underfull \hbox (badness 10000) in paragraph at lines 71--74
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--73
+Underfull \hbox (badness 10000) in paragraph at lines 71--74
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 75--79
+Underfull \hbox (badness 10000) in paragraph at lines 76--80
 
  []
 
@@ -276,7 +282,7 @@ Missing character: There is no ’ in font cmbx12!
 Missing character: There is no Â in font cmr12!
 Missing character: There is no ’ in font cmr12!
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--82
+Underfull \hbox (badness 10000) in paragraph at lines 81--83
 
  []
 
@@ -284,10 +290,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--82
 File: images/Database_Diagram.png Graphic file (type png)
 
 <use images/Database_Diagram.png>
-Package pdftex.def Info: images/Database_Diagram.png used on input line 125.
+Package pdftex.def Info: images/Database_Diagram.png used on input line 126.
 (pdftex.def)             Requested size: 452.18828pt x 146.04526pt.
 
-Overfull \hbox (62.18828pt too wide) in paragraph at lines 125--127
+Overfull \hbox (62.18828pt too wide) in paragraph at lines 126--128
 []
  []
 
@@ -295,10 +301,10 @@ Overfull \hbox (62.18828pt too wide) in paragraph at lines 125--127
 File: images/Server_UML.png Graphic file (type png)
 
 <use images/Server_UML.png>
-Package pdftex.def Info: images/Server_UML.png used on input line 130.
+Package pdftex.def Info: images/Server_UML.png used on input line 131.
 (pdftex.def)             Requested size: 454.19577pt x 249.43126pt.
 
-Overfull \hbox (64.19577pt too wide) in paragraph at lines 130--132
+Overfull \hbox (64.19577pt too wide) in paragraph at lines 131--133
 []
  []
 
@@ -308,7 +314,7 @@ File: images/CreateSequenceDiagram.png Graphic file (type png)
 
 <use images/CreateSequenceDiagram.png>
 Package pdftex.def Info: images/CreateSequenceDiagram.png used on input line 13
-4.
+5.
 (pdftex.def)             Requested size: 427.09459pt x 271.5137pt.
 
 <images/GetDataSequenceDiagram.png, id=68, 838.13126pt x 543.02875pt>
@@ -316,15 +322,15 @@ File: images/GetDataSequenceDiagram.png Graphic file (type png)
 
 <use images/GetDataSequenceDiagram.png>
 Package pdftex.def Info: images/GetDataSequenceDiagram.png used on input line 1
-36.
+37.
 (pdftex.def)             Requested size: 419.0646pt x 271.5137pt.
 
-Overfull \hbox (37.09459pt too wide) in paragraph at lines 134--138
+Overfull \hbox (37.09459pt too wide) in paragraph at lines 135--139
 []
  []
 
 
-Overfull \hbox (29.0646pt too wide) in paragraph at lines 134--138
+Overfull \hbox (29.0646pt too wide) in paragraph at lines 135--139
 []
  []
 
@@ -333,7 +339,7 @@ Overfull \hbox (29.0646pt too wide) in paragraph at lines 134--138
 File: images/statemachinediagram.png Graphic file (type png)
 
 <use images/statemachinediagram.png>
-Package pdftex.def Info: images/statemachinediagram.png used on input line 140.
+Package pdftex.def Info: images/statemachinediagram.png used on input line 141.
 
 (pdftex.def)             Requested size: 342.27791pt x 54.20236pt.
  [20 <./images/GetDataSequenceDiagram.png> <./images/statemachinediagram.png>] 
@@ -342,46 +348,52 @@ Package pdftex.def Info: images/statemachinediagram.png used on input line 140.
 File: images/CallCenterSequence.png Graphic file (type png)
 
 <use images/CallCenterSequence.png>
-Package pdftex.def Info: images/CallCenterSequence.png used on input line 147.
+Package pdftex.def Info: images/CallCenterSequence.png used on input line 148.
 (pdftex.def)             Requested size: 231.3638pt x 346.79477pt.
  [22 <./images/CallCenterSequence.png>]
 <images/AndroidAppUML.jpg, id=88, 765.6103pt x 627.09282pt>
 File: images/AndroidAppUML.jpg Graphic file (type jpg)
 
 <use images/AndroidAppUML.jpg>
-Package pdftex.def Info: images/AndroidAppUML.jpg used on input line 151.
+Package pdftex.def Info: images/AndroidAppUML.jpg used on input line 152.
 (pdftex.def)             Requested size: 382.80421pt x 313.54564pt.
  [23 <./images/AndroidAppUML.jpg>] [24] [25]
-Overfull \hbox (3.88582pt too wide) in paragraph at lines 217--228
+Overfull \hbox (3.88582pt too wide) in paragraph at lines 218--229
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--236
+Underfull \hbox (badness 10000) in paragraph at lines 231--237
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--236
+Underfull \hbox (badness 10000) in paragraph at lines 231--237
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--236
+Underfull \hbox (badness 10000) in paragraph at lines 231--237
 
  []
 
 [26] [27]
-Overfull \hbox (3.88582pt too wide) in paragraph at lines 241--254
+Overfull \hbox (3.88582pt too wide) in paragraph at lines 242--255
 [] 
  []
 
 
-Overfull \hbox (3.88582pt too wide) in paragraph at lines 265--273
+Overfull \hbox (3.88582pt too wide) in paragraph at lines 266--274
 [] 
  []
 
-[28] [29] [30] [31] [32]
+[28] [29]
+Overfull \hbox (55.88457pt too wide) in paragraph at lines 288--289
+\OT1/cmr/m/n/12 Note: The Github Repos-i-tory Link is: https://github.com/jason
+stuart/SE[]Project[]2017 
+ []
+
+[30] [31] [32]
 Missing character: There is no Â in font cmr12!
 Missing character: There is no ’ in font cmr12!
  [33]
@@ -389,28 +401,28 @@ Missing character: There is no ’ in font cmr12!
 File: images/Robert_Signature.jpg Graphic file (type jpg)
 
 <use images/Robert_Signature.jpg>
-Package pdftex.def Info: images/Robert_Signature.jpg used on input line 340.
+Package pdftex.def Info: images/Robert_Signature.jpg used on input line 342.
 (pdftex.def)             Requested size: 78.4999pt x 27.55174pt.
 
 <images/Rashad_Signature.jpg, id=125, 1045.65656pt x 551.81157pt>
 File: images/Rashad_Signature.jpg Graphic file (type jpg)
 
 <use images/Rashad_Signature.jpg>
-Package pdftex.def Info: images/Rashad_Signature.jpg used on input line 342.
+Package pdftex.def Info: images/Rashad_Signature.jpg used on input line 344.
 (pdftex.def)             Requested size: 83.65422pt x 44.14583pt.
 
 <images/Amine_Signature.jpg, id=126, 2538.48375pt x 434.62375pt>
 File: images/Amine_Signature.jpg Graphic file (type jpg)
 
 <use images/Amine_Signature.jpg>
-Package pdftex.def Info: images/Amine_Signature.jpg used on input line 344.
+Package pdftex.def Info: images/Amine_Signature.jpg used on input line 346.
 (pdftex.def)             Requested size: 126.93163pt x 21.73245pt.
 
 <images/Jason_Signature.jpg, id=127, 1510.64375pt x 442.65375pt>
 File: images/Jason_Signature.jpg Graphic file (type jpg)
 
 <use images/Jason_Signature.jpg>
-Package pdftex.def Info: images/Jason_Signature.jpg used on input line 346.
+Package pdftex.def Info: images/Jason_Signature.jpg used on input line 348.
 (pdftex.def)             Requested size: 75.5366pt x 22.13397pt.
  [34 <./images/Robert_Signature.jpg> <./images/Rashad_Signature.jpg> <./images/
 Amine_Signature.jpg> <./images/Jason_Signature.jpg>] (WitsCABS_Documentation.au
@@ -428,7 +440,7 @@ ts/cm/cmbx12.pfb><C:/Users/Jason/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmr12.pfb><C:/Users/Jason/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Jason/AppData/Local/Programs
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on WitsCABS_Documentation.pdf (34 pages, 902717 bytes).
+Output written on WitsCABS_Documentation.pdf (34 pages, 903022 bytes).
 PDF statistics:
  145 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
